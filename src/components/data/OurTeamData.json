@@ -1,0 +1,489 @@
+[
+    {
+        "department": "Super Core",
+        "name": "Suvaditya Mukherjee",
+        "title": "Lead of GDSC MPSTME",
+        "src": "Suvaditya Mukherjee.jpg"
+    },
+    {
+        "department": "Super Core",
+        "name": "Angad Singh Kataria",
+        "title": "Secretary of Operations",
+        "src": "Angad Singh Kataria.jpg"
+    },
+    {
+        "department": "Super Core",
+        "name": "Viraj Patil",
+        "title": "Secretary of Administration and HR",
+        "src": "Viraj Patil.jpg"
+    },
+    {
+        "department": "Super Core",
+        "name": "Aaryadev Chandra",
+        "title": "Secretary of Projects",
+        "src": "Aaryadev Chandra.png"
+    },
+    {
+        "department": "Super Core",
+        "name": "Aryan Lakhani",
+        "title": "Secretary of Club Relations",
+        "src": "Aryan Lakhani.PNG"
+    },
+    {
+        "department": "Android",
+        "name": "Siddhant Lad",
+        "title": "Department Lead",
+        "src": "Siddhant Lad.jpg"
+    },
+    {
+        "department": "Web",
+        "name": "Aajinkya Singh",
+        "title": "Department Lead",
+        "src": "Aajinkya Singh.jpg"
+    },
+    {
+        "department": "Web",
+        "name": "Pratit Bandiwadekar",
+        "title": "Department Lead",
+        "src": "Pratit Bandiwadekar.jpg"
+    },
+    {
+        "department": "CPOS",
+        "name": "Abhinav",
+        "title": "Department Lead",
+        "src": "Abhinav.jpeg"
+    },
+    {
+        "department": "CPOS",
+        "name": "Aditi Mohan",
+        "title": "Department Lead",
+        "src": "https://gdscmpstme.com/static/media/Aditi%20Mohan.ab23e4239beaaf642e5a.jpg"
+    },
+    {
+        "department": "Cybersecurity",
+        "name": "Shravani",
+        "title": "Department Lead",
+        "src": "https://gdscmpstme.com/static/media/Shravani%20Bhoir.585ad735079cace702b1.jpeg"
+    },
+    {
+        "department": "AI/ML",
+        "name": "Saumya Pailwan",
+        "title": "Department Lead",
+        "src": "Saumya Pailwan.jpg"
+    },
+    {
+        "department": "AI/ML",
+        "name": "Shireen Chand",
+        "title": "Department Lead",
+        "src": "https://gdscmpstme.com/static/media/Shireen%20Chand.c3655ebf8eecf02bb3b8.jpg"
+    },
+    {
+        "department": "Robotics & IOT",
+        "name": "Harshad Shah",
+        "title": "Department Lead",
+        "src": "Harshad Shah.png"
+    },
+    {
+        "department": "Robotics & IOT",
+        "name": "Kritin Mathur",
+        "title": "Department Lead",
+        "src": "Kritin Mathur.jpg"
+    },
+    {
+        "department": "Digital Creatives",
+        "name": "Triaksh Mitra",
+        "title": "Department Lead",
+        "src": "Triaksh Mitra.jpg"
+    },
+    {
+        "department": "Digital Creatives",
+        "name": "Riddhi Dumre",
+        "title": "Department Lead",
+        "src": "Riddhi Dumre.JPG"
+    },
+    {
+        "department": "Collaborations",
+        "name": "Pragya Ratan",
+        "title": "Department Lead",
+        "src": "Pragya Ratan.jpg"
+    },
+    {
+        "department": "Collaborations",
+        "name": "Aarushi Tiwari",
+        "title": "Department Lead",
+        "src": "Aarushi Tiwari.png"
+    },
+    {
+        "department": "Collaborations",
+        "name": "Vansh Gandhi",
+        "title": "Department Lead",
+        "src": "https://gdscmpstme.com/static/media/Vansh%20Gandhi.5da370cc665f8abf6acb.jpg"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Diya Karia",
+        "title": "Department Lead",
+        "src": "https://gdscmpstme.com/static/media/Diya%20Karia.962b0133d9f3e941b945.jpg"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Shubham Kumar",
+        "title": "Department Lead",
+        "src": "Shubham Kumar.jpeg"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Siddhant Phatak",
+        "title": "Department Lead",
+        "src": "Siddhant Phatak.jpg"
+    },
+    {
+        "department": "Corporate Relations",
+        "name": "Aashir Ibrahim",
+        "title": "Department Lead",
+        "src": "Aashir Ibrahim.PNG"
+    },
+    {
+        "department": "Corporate Relations",
+        "name": "Aishwarya Purohit",
+        "title": "Department Lead",
+        "src": "Aishwarya Purohit.jpeg"
+    },
+    {
+        "department": "Android",
+        "name": "Annish Vykera",
+        "title": "Executive",
+        "src": "Annish Vykera.jpg"
+    },
+    {
+        "department": "Android",
+        "name": "Mayuresh Shelar",
+        "title": "Executive",
+        "src": "Mayuresh Shelar.jpeg"
+    },
+    {
+        "department": "Android",
+        "name": "Anushek Prasal",
+        "title": "Executive",
+        "src": "Anushek Prasal.jpg"
+    },
+    {
+        "department": "Android",
+        "name": "Khushal Sharma",
+        "title": "Executive",
+        "src": "Khushal Sharma.jpg"
+    },
+    {
+        "department": "Web",
+        "name": "Sahil Patki",
+        "title": "Executive",
+        "src": "Sahil Patki.png"
+    },
+    {
+        "department": "Web",
+        "name": "Ansh Malik",
+        "title": "Executive",
+        "src": "Ansh Malik.jpeg"
+    },
+    {
+        "department": "Web",
+        "name": "Rushabh Javeri",
+        "title": "Executive",
+        "src": "https://gdscmpstme.com/static/media/Rushabh%20Javeri.12bae0d94b792a0d0be7.png"
+    },
+    {
+        "department": "Web",
+        "name": "Hemin Maru",
+        "title": "Executive",
+        "src": "Hemin Maru.jpeg"
+    },
+    {
+        "department": "CPOS",
+        "name": "Ashutosh Adhikari",
+        "title": "Executive",
+        "src": "Ashutosh Adhikari.jpg"
+    },
+    {
+        "department": "CPOS",
+        "name": "Jainam Shah",
+        "title": "Executive",
+        "src": "Jainam Shah.jpeg"
+    },
+    {
+        "department": "CPOS",
+        "name": "Tirth Shah",
+        "title": "Executive",
+        "src": "Tirth Shah.jpg"
+    },
+    {
+        "department": "CPOS",
+        "name": "Nihaal Raichura",
+        "title": "Executive",
+        "src": "Nihaal Raichura.jpg"
+    },
+    {
+        "department": "CPOS",
+        "name": "Rudra Joshi",
+        "title": "Executive",
+        "src": "Rudra Joshi.jpeg"
+    },
+    {
+        "department": "CPOS",
+        "name": "Bhavya Bavishi",
+        "title": "Executive",
+        "src": "Bhavya Bavishi.png"
+    },
+    {
+        "department": "CPOS",
+        "name": "Khushi Jhunjhunwala",
+        "title": "Executive"
+    },
+    {
+        "department": "Cybersecurity",
+        "name": "Devansh Shah",
+        "title": "Executive",
+        "src": "Devansh Shah.jpg"
+    },
+    {
+        "department": "Cybersecurity",
+        "name": "Kenneth Gonsalves",
+        "title": "Executive",
+        "src": "Kenneth Gonsalves.jpg"
+    },
+    {
+        "department": "Cybersecurity",
+        "name": "Sagar Bharti",
+        "title": "Executive",
+        "src": "Sagar Bharti.jpg"
+    },
+    {
+        "department": "AI/ML",
+        "name": "Kevin Karia",
+        "title": "Executive",
+        "src": "Kevin Karia.jpeg"
+    },
+    {
+        "department": "AI/ML",
+        "name": "Parthav Joshi",
+        "title": "Executive",
+        "src": "Parthav Joshi.jpeg"
+    },
+    {
+        "department": "AI/ML",
+        "name": "Tanishq Sardana",
+        "title": "Executive",
+        "src": "Tanishq Sardana.jpg"
+    },
+    {
+        "department": "AI/ML",
+        "name": "Dhyey Sanghavi",
+        "title": "Executive",
+        "src": "Dhyey Sanghavi.jpeg"
+    },
+    {
+        "department": "AI/ML",
+        "name": "Yashvi Mehta",
+        "title": "Executive",
+        "src": "Yashvi Mehta.jpg"
+    },
+    {
+        "department": "AI/ML",
+        "name": "Ayaan Hussaini",
+        "title": "Executive",
+        "src": "Ayaan Hussaini.jpg"
+    },
+    {
+        "department": "AI/ML",
+        "name": "Uraaz Gorimar",
+        "title": "Executive",
+        "src": "Uraaz Gorimar.jpeg"
+    },
+    {
+        "department": "Robotics & IOT",
+        "name": "Aditya Patankar",
+        "title": "Executive",
+        "src": "Aditya Patankar.jpg"
+    },
+    {
+        "department": "Robotics & IOT",
+        "name": "Shounak Deshmukh",
+        "title": "Executive"
+    },
+    {
+        "department": "Robotics & IOT",
+        "name": "Pal Patel",
+        "title": "Executive",
+        "src": "Pal Patel.jpeg"
+    },
+    {
+        "department": "Robotics & IOT",
+        "name": "Mohammad Adil Shaikh",
+        "title": "Executive",
+        "src": "Mohammad Adil Shaikh.jpg"
+    },
+    {
+        "department": "Robotics & IOT",
+        "name": "Divyansh Tiwari",
+        "title": "Executive",
+        "src": "Divyansh Tiwari.jpg"
+    },
+    {
+        "department": "Robotics & IOT",
+        "name": "Jay Sharma",
+        "title": "Executive"
+    },
+    {
+        "department": "Digital Creatives",
+        "name": "Aditya Subramanian",
+        "title": "Executive",
+        "src": "Aditya Subramanian.jpg"
+    },
+    {
+        "department": "Digital Creatives",
+        "name": "Venkata Kashyap Chilakamarri",
+        "title": "Executive",
+        "src": "Venkata Kashyap Chilakamarri.jpg"
+    },
+    {
+        "department": "Digital Creatives",
+        "name": "Smit Mange",
+        "title": "Executive",
+        "src": "Smit Mange.png"
+    },
+    {
+        "department": "Digital Creatives",
+        "name": "Puru Singhvi",
+        "title": "Executive",
+        "src": "Puru Singhvi.jpg"
+    },
+    {
+        "department": "Digital Creatives",
+        "name": "Reuben Rouse",
+        "title": "Executive",
+        "src": "Reuben Rouse.jpg"
+    },
+    {
+        "department": "Collaborations",
+        "name": "Savali Chavan",
+        "title": "Executive",
+        "src": "Savali Chavan.jpg"
+    },
+    {
+        "department": "Collaborations",
+        "name": "Jay Ajmera",
+        "title": "Executive",
+        "src": "Jay Ajmera.jpg"
+    },
+    {
+        "department": "Collaborations",
+        "name": "Divy Otawat",
+        "title": "Executive",
+        "src": "Divy Otawat.jpeg"
+    },
+    {
+        "department": "Collaborations",
+        "name": "Kush Trivedi",
+        "title": "Executive",
+        "src": "Kush Trivedi.jpg"
+    },
+    {
+        "department": "Collaborations",
+        "name": "Parth Gupta",
+        "title": "Executive",
+        "src": "Parth Gupta.png"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Yash Mahadik",
+        "title": "Executive",
+        "src": "Yash Mahadik.jpeg"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Nidhi Nair",
+        "title": "Executive",
+        "src": "Nidhi Nair.jpg"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Miheer Thampi",
+        "title": "Executive"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Sarah Bhuptani",
+        "title": "Executive"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Aryan Penta",
+        "title": "Executive",
+        "src": "Aryan Penta.jpg"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Tanishkaa Chaturvedi",
+        "title": "Executive",
+        "src": "Tanishkaa Chaturvedi.jpg"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Vishwaja Bute",
+        "title": "Executive",
+        "src": "Vishwaja Bute.jpeg"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Aryan Shah",
+        "title": "Executive",
+        "src": "Aryan Shah.jpg"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Sanchi Bubna",
+        "title": "Executive",
+        "src": "Sanchi Bubna.jpg"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Pooja Deshpande",
+        "title": "Executive",
+        "src": "Pooja Deshpande.jpg"
+    },
+    {
+        "department": "Event Operations and Outreach",
+        "name": "Hetvi Gandhi",
+        "title": "Executive",
+        "src": "Hetvi Gandhi.png"
+    },
+    {
+        "department": "Corporate Relations",
+        "name": "Devanshi Ramaiya",
+        "title": "Executive",
+        "src": "Devanshi Ramaiya.JPG"
+    },
+    {
+        "department": "Corporate Relations",
+        "name": "Rohan Jain",
+        "title": "Executive",
+        "src": "Rohan Jain.jpg"
+    },
+    {
+        "department": "Corporate Relations",
+        "name": "Kshama Purohit",
+        "title": "Executive",
+        "src": "Kshama Purohit.jpeg"
+    },
+    {
+        "department": "Corporate Relations",
+        "name": "Ananya Datta",
+        "title": "Executive",
+        "src": "Ananya Datta.jpeg"
+    },
+    {
+        "department": "Corporate Relations",
+        "name": "Siddh Baldha",
+        "title": "Executive",
+        "src": "Siddh Baldha.jpeg"
+    }
+]
