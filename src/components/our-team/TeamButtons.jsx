@@ -1,5 +1,5 @@
 const TeamButtons = ({ setBtn, setData, setTeam, btn,OurTeamData }) => {
-  const shoot = (name, index) => {
+  const teamFilter = (name, index) => {
     if (name == "All") {
       // Set the active department to "All"
       setBtn({ ...btn, activeDepartment: "All" });
@@ -29,7 +29,7 @@ const TeamButtons = ({ setBtn, setData, setTeam, btn,OurTeamData }) => {
   };
   // Function to determine the text color of the button for a given department
   const toggleBtnTextStyles = (index) => {
-    // If the button corresponds to the active department, return the active text color
+    // If the button corresponds to the active department, return the active text color(white) otherwise black
     return btn.departments[index].name == btn.activeDepartment
       ? "white"
       : "black";
@@ -41,7 +41,7 @@ const TeamButtons = ({ setBtn, setData, setTeam, btn,OurTeamData }) => {
         return (
           <button
             onClick={() => {
-              shoot(department.name, index);
+              teamFilter(department.name, index);
             }}
             className={`whitespace-nowrap uppercase rounded-3xl border-2 py-2 px-4 w-fit fw-400  border-yellow-300 mx-2 md:border-transparent hover:border-yellow-300 `}
             key={department.name}

@@ -15,6 +15,7 @@ const Card = ({ name, src, title, department }) => {
         {/* p element displays the team member's title */}
         <p>
           {title}
+          {/*If the department is supercore the department would not be displayed.Otherwiseit will be displayed */}
           {department!="Super Core"?(<p>({department})</p>):(<span></span>)}
         </p>
       

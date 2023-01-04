@@ -1,14 +1,16 @@
-
+import { useState, useEffect } from "react";
+//Importing components
 import Heading from "./our-team/Heading";
 import TeamButtons from "./our-team/TeamButtons";
 import TeamList from "./our-team/TeamList";
-import { useState, useEffect } from "react";
 import SearchMember from "./our-team/SearchMember";
-import OurTeamData from "./data/OurTeamData.json"
-import greendots from "../assets/decorations/green-dots-decor.svg"
-import peoplesvg from "../assets/decorations/decoration-5.svg"
-import yellowbook from "../assets/decorations/decoration-book-yellow.svg"
-import redglobe from "../assets/decorations/decoration-4.svg"
+//Importing team data
+import OurTeamData from "./data/OurTeamData.json";
+//Importing decorations
+import greendots from "../assets/decorations/green-dots-decor.svg";
+import peoplesvg from "../assets/decorations/decoration-5.svg";
+import yellowbook from "../assets/decorations/decoration-book-yellow.svg";
+import redglobe from "../assets/decorations/decoration-4.svg";
 
 // OurTeam is a functional component that displays a list of team members
 const OurTeam = () => {
@@ -38,7 +40,6 @@ const OurTeam = () => {
 
   // SearchMemberbyName is an event handler that searches for a specific team member by name
   const SearchMemberbyName = (member) => {
-    console.log(member);
     // If the member parameter is an empty string or undefined, reset data state to the contents of OurTeamData
     if (
       member == "" ||
@@ -68,25 +69,24 @@ const OurTeam = () => {
 
   return (
     <div className="flex flex-col relative items-center  h-full">
+      
+      {/*Placing the decorations*/}
       <div className="svgdec invisible md:visible absolute top-36 right-0">
-      <img src={greendots} alt="greendots" />
+        <img src={greendots} alt="greendots" />
       </div>
       <div className="decperson invisible md:visible absolute top-80 left-24">
-        <img src={peoplesvg} alt="peoplesvg"/>
-
+        <img src={peoplesvg} alt="peoplesvg" />
       </div>
       <div className="book invisible md:visible absolute bottom-20 left-0">
-      
-      <img src={yellowbook} alt="yellowbook"/>
-
+        <img src={yellowbook} alt="yellowbook" />
       </div>
       <div className="globe invisible md:visible absolute bottom-12 right-6 rotate-12">
-      <img src={redglobe} alt="redglobe"/>
+        <img src={redglobe} alt="redglobe" />
       </div>
 
       {/* Heading component displays the name of the current team */}
-
       <Heading team={team} />
+
       {/* TeamButtons component displays buttons for filtering by team */}
       <TeamButtons
         setBtn={setBtn}
@@ -97,8 +97,12 @@ const OurTeam = () => {
       />
 
       {/* SearchMember component is a search bar for searching by team member name */}
-
-      <SearchMember setMember={setMember} member={member} btn={btn} setBtn={setBtn} />
+      <SearchMember
+        setMember={setMember}
+        member={member}
+        btn={btn}
+        setBtn={setBtn}
+      />
 
       {/* TeamList component displays a list of team members */}
       <TeamList data={data} />
