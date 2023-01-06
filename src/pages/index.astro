@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SocialCards from "../components/SocialCards.astro";
+import UpcomingEvent from '../components/UpcomingEvent.astro';
 
 const twitter = {
 	logo:"twitter-logo.svg",
@@ -32,31 +33,55 @@ const gdsc_comm = {
 	desc:"Find us on the official GDSC Community",
 	link:"https://gdsc.community.dev/mukesh-patel-school-of-technology-management-and-engineering-mumbai/"
 }
+
+const event = {
+	date:"18-20",
+	month:"FEB",
+	title:"Announcing AI Summit",
+	type:"A",
+	descr:"Join us as we host industry-experts and top researchers in the field of Artificial Intelligence, Machine Learning and Deep Learning to give you an insight into the world of Artificial Intelligence like no other.",
+	imgsrc:"/images/cards/event-image.svg"
+}
 ---
 
-<Layout title="Home | GDSC MPSTME">
-    <main>
+<Layout title="Home | GDSC MPSTME" background="#F4F4F4">
+    <main class="">
 		<!-- Hero Section -->
-		<div class="flex flex-col lg:grid lg:grid-cols-2 place-content-around relative">
+		<div class="flex flex-col lg:grid lg:grid-cols-2 place-content-around relative lg:mb-32 lg:pt-14">
 			<h3 class="px-5 text-4xl text-neutral-500 font-semibold mx-auto mt-10 mb-14 md:text-5xl lg:my-auto lg:text-5xl lg:ml-40">
 				Google Developer
 				<br>
 				Student Club, MPSTME.
 				<br>
-				A Society.
+				<div id="typed-strings">
+					<p><span class="text-[#a5d6a7]">A Committee</span></p>
+					<p><span class="text-[#ef9a9a]">A Society</span></p>
+					<p><span class="text-[#FFe082]">A Family</span></p>
+				</div>
+				<span id="typed"></span>
 			</h3>
-			<img class="w-4/5 mx-auto lg:w-auto" src="/images/hero-image.svg" alt="Hero Image">
+			<img class="w-4/5 mx-auto mb-8 lg:w-auto" src="/images/hero-image.svg" alt="Hero Image">
 			<img class="absolute w-14 top-20 left-40 hidden lg:block" src="images/decor/decor-1.svg" alt="">	<!-- Decor -->
 			<img class="absolute w-14 top-16 left-[50%] hidden lg:block" src="images/decor/decor-2.svg" alt="">	<!-- Decor -->
 			<img class="absolute w-12 top-[78%] left-[45%] hidden lg:block" src="images/decor/decor-3.svg" alt="">	<!-- Decor -->
 			<img class="absolute top-full h-[400px] z-10 hidden lg:block" src="images/decor/floating-girl-decor.svg" alt=""> <!-- Decor -->
 		</div>
 
+		
+		<!-- Event -->
+		<svg xmlns="http://www.w3.org/2000/svg" id="curve" class="green" fill="none" preserveAspectRatio="none" viewBox="0 0 1680 40">
+			<path d="M0 40h1680V30S1340 0 840 0 0 30 0 30z" fill="#FFF"></path>
+		</svg>
+		<div id="event-div" class="bg-white hidden">
+			<UpcomingEvent date={event.date} month={event.month} title={event.title} type={event.type} descr={event.descr} imgsrc={event.imgsrc} />
+		</div>
+		
+
 		<!-- About Us -->
-		<section class="bg-[#E8F5E9] clip-section relative" style="border-radius: 20% 20% 0% 0% / 1% 1% 0% 0% ;">
-			<img class="absolute w-32 z-10 top-32 right-0 hidden lg:block" src="images/decor/decoration-globe.svg" alt=""> <!-- Decor -->
-			<div class="mt-5 pt-5 lg:my-32">
-				<div class="lg:w-4/6 lg:mx-auto">
+		<section id="about-section" class="bg-[#E8F5E9] clip-section relative">		<!-- pt-36 -->
+			<img id="globe-decor" class="absolute w-32 z-10 top-32 right-0 hidden lg:block" src="images/decor/decoration-globe.svg" alt=""> <!-- Decor 80 -->
+			<div class="pt-10 lg:mb-32">
+				<div class="lg:w-4/5 lg:mx-auto">
 					<p class="font-bold text-2xl text-[#498AF4] pt-28 pl-10 lg:pt-40">About Us</p>
 					<p class="font-bold text-4xl pl-10 tracking-wide leading-snug">What Do We Do?</p>
 					<div class="m-7 lg:flex">
@@ -95,7 +120,7 @@ const gdsc_comm = {
 		</section>
 
 		<!-- Social Section -->
-		<section class="bg-white -z-10 relative flex flex-col px-8 pb-36 overflow-hidden lg:flex-row">
+		<section class="bg-white -z-10 relative flex flex-col px-8 py-36 overflow-hidden lg:flex-row">
 			<div class="mt-28 ml-8 md:pl-24 md:mt-48 lg:pl-0 lg:min-w-[35%] lg:mt-40 lg:ml-28">
 				<p class="font-bold text-5xl text-neutral-500 mb-8 leading-tight md:pr-20 md:mb-3">Make sure to be updated with everything we do.</p>
 				<p class="font-bold text-xl text-neutral-400 p-2">Follow us on our socials so you don't miss any future events / collaboration / news and while you're at it, make sure to like our posts to show us some love!</p>
@@ -131,6 +156,60 @@ const gdsc_comm = {
     </main>
 </Layout>
 
+<script>
+	import Typed from 'typed.js';
+
+	const color = ["red", "green", "yellow"];
+
+	var options = {
+	stringsElement: '#typed-strings',
+	typeSpeed: 40,
+	backSpeed: 40,
+	backDelay: 1600,
+	loop: true,
+	onStringTyped: (arrayPos, self) => {
+		document.getElementById("typed").style.color = color[arrayPos];
+	},
+	};
+
+	var typed = new Typed('#typed', options);
+
+	
+
+</script>
+
+<script>
+	let eventDate = "2023-02-06";
+	const currDate = new Date().toJSON().slice(0,10);
+	let curve = document.getElementById("curve");
+	let event_div = document.getElementById("event-div");
+	let about_sec = document.getElementById("about-section");
+	let globe_decor = document.getElementById("globe-decor");
+
+	if (eventDate > currDate) {
+		console.log("Upcoming Event");
+		curve.classList.remove("green");
+		event_div.classList.remove("hidden");
+		about_sec.classList.add("pt-36");
+		globe_decor.classList.remove("top-32");
+		globe_decor.classList.add("top-80");
+	} else if (eventDate==currDate) {
+		console.log("Current Event");
+		curve.classList.remove("green");
+		event_div.classList.remove("hidden");
+		about_sec.classList.add("pt-36");
+		globe_decor.classList.remove("top-32");
+		globe_decor.classList.add("top-80");
+	} else {
+		console.log("Past Event");
+		curve.classList.add("green");
+		event_div.classList.add("hidden");
+		about_sec.classList.remove("pt-36");
+		globe_decor.classList.remove("top-80");
+		globe_decor.classList.add("top-32");
+	}
+</script>
+
 <style>
 	.card{
 		@apply bg-white border border-green-600 rounded-2xl p-5 mt-5 lg:max-w-sm;
@@ -138,6 +217,10 @@ const gdsc_comm = {
 
 	.clip-section{
 		clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8vw), 0 100%);
-		margin-bottom: -10vw;
+		margin-bottom: -20vw;
+	}
+
+	.green {
+		filter: brightness(0) saturate(100%) invert(98%) sepia(10%) saturate(338%) hue-rotate(52deg) brightness(97%) contrast(98%);
 	}
 </style>

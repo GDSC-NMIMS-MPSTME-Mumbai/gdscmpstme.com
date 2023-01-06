@@ -4,10 +4,10 @@ import Header from '../components/Header.astro';
 
 export interface Props {
   title: string;
-  background?: string;
+  background: string;
 }
 
-const { title, background = 'bg-white' } = Astro.props;
+const { title, background } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ const { title, background = 'bg-white' } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class={`${background} min-h-screen flex flex-col`}>
+  <body class={`bg-[${background}] min-h-screen flex flex-col`}>
     <Header />
     <slot />
     <Footer />
