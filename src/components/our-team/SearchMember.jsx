@@ -12,14 +12,12 @@ const SearchMember = ({ member, setMember,setBtn,btn }) => {
         onChange={(event) => {
           setBtn({ ...btn, activeDepartment: "All" })
           setMember(event.target.value)
-      
-         
         }}
       
         placeholder="Search..."
         className="w-5/6 my-2 ml-3 outline-none"
       />
-
+    {/*Div for search svg */}
       <div className="mt-3">
         <svg
           width="18"

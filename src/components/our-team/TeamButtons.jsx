@@ -36,7 +36,7 @@ const TeamButtons = ({ setBtn, setData, setTeam, btn,OurTeamData }) => {
   };
 
   return (
-    <div className="flex scrollbar md:flex-wrap md:  md:justify-center my-2 uppercase max-w-full scrollbar-track-amber-400">
+    <div className="flex overflow-x-scroll md:flex-wrap md:overflow-x-hidden md:justify-center my-2 uppercase max-w-full">
       {btn.departments.map((department, index) => {
         return (
           <button
