@@ -4,7 +4,7 @@ const Heading = ({ team }) => {
   return (
     <div className="text-5xl text-center font-bold my-10">
       Meet&nbsp;
-      <span style={{ color: "#42A5F5" }}>Our {team} Team</span>
+      <span className="text-blue-400">Our {team} Team</span>
     </div>
   );
 };

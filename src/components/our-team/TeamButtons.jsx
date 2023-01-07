@@ -1,54 +1,42 @@
-const TeamButtons = ({ setBtn, setData, setTeam, btn,OurTeamData }) => {
+const TeamButtons = ({ setDepartmentBtn, setMembers, setTeam, departmentBtn,OurTeamData }) => {
   const teamFilter = (name, index) => {
     if (name == "All") {
       // Set the active department to "All"
-      setBtn({ ...btn, activeDepartment: "All" });
+      setDepartmentBtn({ ...departmentBtn, activeDepartment: "All" });
       // Clear the team name
       setTeam("");
-      // Set the data to the full list of team members
-      setData(OurTeamData);
+      // Set the members to the full list of team members
+      setMembers(OurTeamData);
     } else {
       // Set the active department to the selected department
-      setBtn({ ...btn, activeDepartment: name });
+      setDepartmentBtn({ ...departmentBtn, activeDepartment: name });
       // Set the team name to the selected department
       setTeam(name);
       // Filter the list of team members by the selected department
       const filteredData = OurTeamData.filter(
         (element) => element.department.trim() === name.trim()
       );
-      // Set the data to the filtered list of team members
-      setData(filteredData);
+      // Set the members to the filtered list of team members
+      setMembers(filteredData);
     }
   };
-  // Function to determine the background color of the button for a given department
-  const toggleBtnBgColorStyles = (index) => {
-    // If the button corresponds to the active department, return the active background color
-    return btn.departments[index].name === btn.activeDepartment
-      ? "#FBBF0E"
-      : "transparent";
-  };
-  // Function to determine the text color of the button for a given department
-  const toggleBtnTextStyles = (index) => {
-    // If the button corresponds to the active department, return the active text color(white) otherwise black
-    return btn.departments[index].name == btn.activeDepartment
-      ? "white"
-      : "black";
+  // Function to determine the color styles of the button for a given department
+  const toggleBtnColorStyles = (index) => {
+    return departmentBtn.departments[index].name === departmentBtn.activeDepartment
+      ? "bg-yellow-400 text-white"
+      : "bg-transparent text-black";
   };
 
   return (
-    <div className="flex overflow-x-scroll md:flex-wrap md:overflow-x-hidden md:justify-center my-2 uppercase max-w-full">
-      {btn.departments.map((department, index) => {
+    <div className="flex scrollbar scrollbar-track-amber-400 md:flex-wrap  md:justify-center my-2 uppercase max-w-full">
+      {departmentBtn.departments.map((department, index) => {
         return (
           <button
             onClick={() => {
               teamFilter(department.name, index);
             }}
-            className={`whitespace-nowrap uppercase rounded-3xl border-2 py-2 px-4 w-fit fw-400  border-yellow-300 mx-2 md:border-transparent hover:border-yellow-300 `}
+            className={`whitespace-nowrap ${toggleBtnColorStyles(index)}  uppercase rounded-3xl border-2 py-2 px-4 mb-6  w-fit fw-400  border-yellow-300 mx-2 md:border-transparent hover:border-yellow-300 md:mb-2 `}
             key={department.name}
-            style={{
-              backgroundColor: `${toggleBtnBgColorStyles(index)}`,
-              color: `${toggleBtnTextStyles(index)}`,
-            }}
           >
             {department.name}
           </button>

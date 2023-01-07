@@ -1,10 +1,10 @@
 import Card from "./Card";
 
-const TeamList = ({ data }) => {
+const TeamList = ({members }) => {
   // TeamList component returns makes up a grid like structure which contains all the member cards
   return (
-    <div className=" flex flex-wrap items-center justify-center mx-10">
-      {data.map((member, key) => {
+    <div className=" flex flex-wrap  justify-center mx-10 md:min-h-[500px]">
+      {members.map((member, key) => {
         return (
           <Card
             // name prop is set to the name of the team member

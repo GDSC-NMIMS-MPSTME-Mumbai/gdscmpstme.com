@@ -1,21 +1,21 @@
 
 
-const SearchMember = ({ member, setMember,setBtn,btn }) => {
+const SearchMember = ({ member, setMember,setDepartmentBtn,departmentBtn }) => {
 
 
    
   return (
     <div className=" w-3/4 h-12 md:w-1/4 mt-8 mb-12 rounded-full bg-white flex border-2 border-black ">
       <input
-        type="search"
+        type="text"
         value={member}
         onChange={(event) => {
-          setBtn({ ...btn, activeDepartment: "All" })
+          setDepartmentBtn({ ...departmentBtn, activeDepartment: "All" })
           setMember(event.target.value)
         }}
       
         placeholder="Search..."
-        className="w-5/6 my-2 ml-3 outline-none"
+        className="w-5/6 my-2 ml-5 outline-none"
       />
     {/*Div for search svg */}
       <div className="mt-3">

@@ -7,21 +7,21 @@ import SearchMember from "./our-team/SearchMember";
 //Importing team data
 import OurTeamData from "./data/OurTeamData.json";
 //Importing decorations
-import greendots from "../assets/decorations/green-dots-decor.svg";
-import peoplesvg from "../assets/decorations/decoration-5.svg";
-import yellowbook from "../assets/decorations/decoration-book-yellow.svg";
-import redglobe from "../assets/decorations/decoration-4.svg";
+import greendots from "/public/decorations/green-dots-decor.svg";
+import peoplesvg from "/public/decorations/decoration-5.svg";
+import yellowbook from "/public/decorations/decoration-book-yellow.svg";
+import redglobe from "/public/decorations/decoration-4.svg";
 
 // OurTeam is a functional component that displays a list of team members
 const OurTeam = () => {
-  // data state is initialized to the contents of OurTeamData
-  const [data, setData] = useState(OurTeamData);
+  // members state is initialized to the contents of OurTeamData
+  const [members, setMembers] = useState(OurTeamData);
   // team state is used to store the name of the current team being displayed
   const [team, setTeam] = useState("");
   // member state is used to store the name of a specific team member being searched for
   const [member, setMember] = useState("");
-  // btn state is used to store information about the buttons for filtering by team
-  const [btn, setBtn] = useState({
+  // departmentBtn state is used to store information about the buttons for filtering by team
+  const [departmentBtn, setDepartmentBtn] = useState({
     activeDepartment: "All",
     departments: [
       { name: "Super Core" },
@@ -40,16 +40,16 @@ const OurTeam = () => {
 
   // SearchMemberbyName is an event handler that searches for a specific team member by name
   const SearchMemberbyName = (member) => {
-    // If the member parameter is an empty string or undefined, reset data state to the contents of OurTeamData
+    // If the member parameter is an empty string or undefined, reset members state to the contents of OurTeamData
     if (
       member == "" ||
       member == " " ||
       member == undefined ||
       member == null
     ) {
-      setData(OurTeamData);
+      setMembers(OurTeamData);
     } else {
-      // Otherwise, filter OurTeamData by the member's name and set data state to the filtered results
+      // Otherwise, filter OurTeamData by the member's name and set members state to the filtered results
       const updatedList = OurTeamData.filter((currentElement) => {
         return currentElement.name
           .toLowerCase()
@@ -57,8 +57,8 @@ const OurTeam = () => {
           .includes(member.toLowerCase().trim());
       });
       setTeam("");
-      setBtn({ ...btn, activeDepartment: "All" });
-      setData(updatedList);
+      setDepartmentBtn({ ...departmentBtn, activeDepartment: "All" });
+      setMembers(updatedList);
     }
   };
 
@@ -68,19 +68,19 @@ const OurTeam = () => {
   }, [member]);
 
   return (
-    <div className="flex flex-col relative items-center  h-full">
+    <div className="flex flex-col relative items-center h-full">
       
       {/*Placing the decorations*/}
-      <div className="svgdec invisible md:visible absolute top-36 right-0">
-        <img src={greendots} alt="greendots" />
+      <div className=" hidden  md:block absolute top-40 right-0">
+        <img src={greendots} className="w-36" alt="greendots" />
       </div>
-      <div className="decperson invisible md:visible absolute top-80 left-24">
-        <img src={peoplesvg} alt="peoplesvg" />
+      <div className="hidden md:block absolute top-80 left-24">
+        <img src={peoplesvg} className="w-24" alt="peoplesvg" />
       </div>
-      <div className="book invisible md:visible absolute bottom-20 left-0">
+      <div className="hidden md:block absolute bottom-20 left-0">
         <img src={yellowbook} alt="yellowbook" />
       </div>
-      <div className="globe invisible md:visible absolute bottom-12 right-6 rotate-12">
+      <div className="hidden md:block absolute bottom-12 right-6 rotate-12">
         <img src={redglobe} alt="redglobe" />
       </div>
 
@@ -89,10 +89,10 @@ const OurTeam = () => {
 
       {/* TeamButtons component displays buttons for filtering by team */}
       <TeamButtons
-        setBtn={setBtn}
-        setData={setData}
+        setDepartmentBtn={setDepartmentBtn}
+        setMembers={setMembers}
         setTeam={setTeam}
-        btn={btn}
+        departmentBtn={departmentBtn}
         OurTeamData={OurTeamData}
       />
 
@@ -100,12 +100,12 @@ const OurTeam = () => {
       <SearchMember
         setMember={setMember}
         member={member}
-        btn={btn}
-        setBtn={setBtn}
+        departmentBtn={departmentBtn}
+        setDepartmentBtn={setDepartmentBtn}
       />
 
       {/* TeamList component displays a list of team members */}
-      <TeamList data={data} />
+      <TeamList members={members} />
     </div>
   );
 };
