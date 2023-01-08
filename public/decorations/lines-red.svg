@@ -1,12 +1,12 @@
-<svg width="89" height="89" viewBox="0 0 89 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="44.1302" cy="44.1302" r="32.5" transform="rotate(-28.7699 44.1302 44.1302)" fill="#FD2B25"/>
-<line x1="23.9865" y1="42.1101" x2="53.7133" y2="25.788" stroke="#FFEBEE" stroke-width="2"/>
-<line x1="23.9865" y1="42.1101" x2="53.7133" y2="25.788" stroke="#FFEBEE" stroke-width="2"/>
-<line x1="23.9865" y1="42.1101" x2="53.7133" y2="25.788" stroke="#FFEBEE" stroke-width="2"/>
-<line x1="29.1554" y1="51.5236" x2="58.8822" y2="35.2015" stroke="#FFEBEE" stroke-width="2"/>
-<line x1="29.1554" y1="51.5236" x2="58.8822" y2="35.2015" stroke="#FFEBEE" stroke-width="2"/>
-<line x1="29.1554" y1="51.5236" x2="58.8822" y2="35.2015" stroke="#FFEBEE" stroke-width="2"/>
-<line x1="34.3244" y1="60.9371" x2="64.0512" y2="44.615" stroke="#FFEBEE" stroke-width="2"/>
-<line x1="34.3244" y1="60.9371" x2="64.0512" y2="44.615" stroke="#FFEBEE" stroke-width="2"/>
-<line x1="34.3244" y1="60.9371" x2="64.0512" y2="44.615" stroke="#FFEBEE" stroke-width="2"/>
+<svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="32.5" cy="32.5" r="32.5" fill="#FD2B25"/>
+<line x1="15.8152" y1="21.0342" x2="49.7282" y2="21.0342" stroke="#FFEBEE" stroke-width="2"/>
+<line x1="15.8152" y1="21.0342" x2="49.7282" y2="21.0342" stroke="#FFEBEE" stroke-width="2"/>
+<line x1="15.8152" y1="21.0342" x2="49.7282" y2="21.0342" stroke="#FFEBEE" stroke-width="2"/>
+<line x1="15.8149" y1="31.7734" x2="49.728" y2="31.7734" stroke="#FFEBEE" stroke-width="2"/>
+<line x1="15.8149" y1="31.7734" x2="49.728" y2="31.7734" stroke="#FFEBEE" stroke-width="2"/>
+<line x1="15.8149" y1="31.7734" x2="49.728" y2="31.7734" stroke="#FFEBEE" stroke-width="2"/>
+<line x1="15.8154" y1="42.5127" x2="49.7285" y2="42.5127" stroke="#FFEBEE" stroke-width="2"/>
+<line x1="15.8154" y1="42.5127" x2="49.7285" y2="42.5127" stroke="#FFEBEE" stroke-width="2"/>
+<line x1="15.8154" y1="42.5127" x2="49.7285" y2="42.5127" stroke="#FFEBEE" stroke-width="2"/>
 </svg>
