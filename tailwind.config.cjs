@@ -30,6 +30,9 @@ module.exports = {
                         light: '#FFEBEE',
                         DEFAULT: '#EB4A3D',
                     },
+                    'purple':{
+                        light:'#E9D1FE',
+                    }
                 }
             },
         },
