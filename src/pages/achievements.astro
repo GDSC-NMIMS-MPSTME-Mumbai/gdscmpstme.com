@@ -1,10 +1,64 @@
 ---
-import WIP from '../components/WIP.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import achievements from "../assets/achievements.png";
 ---
 
 <Layout title="Achievements & Projects | GDSC MPSTME">
-  <main>
-    <WIP />
-  </main>
+	<main>
+		<div class="md:pb-12 md:pt-5">
+			<div class="container mx-auto max-sm:px-4">
+				<div class="lg:flex justify-center md:mt-10 xl:mx-44">
+					<div
+						class="bg-gdsc-green-light rounded-[25px] p-8 flex flex-col justify-between leading-normal"
+					>
+						<div
+							class="grid md:grid-cols-3 items-center justify-center"
+						>
+							<div class="">
+								<img
+									class=""
+									src={achievements}
+									alt=""
+									srcset=""
+									width="300"
+								/>
+							</div>
+							<div class="mb-8 md:col-span-2">
+								<div
+									class="text-gray-900 font-bold text-5xl mb-2 max-sm:text-center"
+								>
+									Achievements & Projects
+								</div>
+								<p
+									class="text-gray-700 text-base max-sm:text-center max-sm:mt-6"
+								>
+									As a club, we have always strived to bring
+									excellence in our work. The fruit of which
+									comes through the winnings from different
+									competitions that members of the GDSC have
+									taken part in. Take a look at some of our
+									most memorable wins! Also, while you're at
+									it check out snippets and more details about
+									our projects, see their source-code and see
+									what makes them unique!
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="mt-8 md:mt-20">
+                    <div
+                        class="text-gdsc-green font-bold text-xl mb-2 pl-3 md:pl-48"
+                    >
+                    Achievements Archive
+                    </div>
+                    <div
+                        class="text-gray-900 font-bold text-5xl mb-2 pl-3 md:pl-48"
+                    >
+                        Successful, Memorable Achievements So Far
+                    </div>
+                </div>
+			</div>
+		</div>
+	</main>
 </Layout>
