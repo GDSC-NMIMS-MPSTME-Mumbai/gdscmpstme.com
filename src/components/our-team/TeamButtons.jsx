@@ -23,7 +23,7 @@ const TeamButtons = ({ setDepartmentBtn, setMembers, setTeam, departmentBtn,OurT
   // Function to determine the color styles of the button for a given department
   const toggleBtnColorStyles = (index) => {
     return departmentBtn.departments[index].name === departmentBtn.activeDepartment
-      ? "bg-yellow-400 text-white"
+      ? "bg-gdsc-yellow text-white"
       : "bg-transparent text-black";
   };
 
@@ -35,7 +35,7 @@ const TeamButtons = ({ setDepartmentBtn, setMembers, setTeam, departmentBtn,OurT
             onClick={() => {
               teamFilter(department.name, index);
             }}
-            className={`whitespace-nowrap ${toggleBtnColorStyles(index)}  uppercase rounded-3xl border-2 py-2 px-4 mb-6  w-fit fw-400  border-yellow-300 mx-2 md:border-transparent hover:border-yellow-300 md:mb-2 `}
+            className={`whitespace-nowrap ${toggleBtnColorStyles(index)}  uppercase rounded-3xl border-2 py-2 px-4 mb-6  w-fit fw-400  border-gdsc-yellow mx-2 md:border-transparent hover:border-gdsc-yellow md:mb-2 `}
             key={department.name}
           >
             {department.name}
@@ -44,7 +44,7 @@ const TeamButtons = ({ setDepartmentBtn, setMembers, setTeam, departmentBtn,OurT
       })}
     </div>
   );
-};
+}; 
 
 //TeamButtons component is exported so that it can be used in OurTeam component(parent component)
 export default TeamButtons;
