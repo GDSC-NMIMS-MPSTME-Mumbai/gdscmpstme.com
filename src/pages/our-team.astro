@@ -1,10 +1,11 @@
 ---
 import WIP from '../components/WIP.astro';
 import Layout from '../layouts/Layout.astro';
+import OurTeam from '../components/our-team/OurTeam';
 ---
 
-<Layout title="Our Team | GDSC MPSTME">
+<Layout title="Our Team | GDSC MPSTME" background="bg-gdsc-yellow-light">
   <main>
-    <WIP />
+    <OurTeam client:visible/>
   </main>
 </Layout>
