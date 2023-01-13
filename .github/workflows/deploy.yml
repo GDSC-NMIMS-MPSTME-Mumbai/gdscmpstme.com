@@ -17,6 +17,9 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ secrets.PAGE_URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
