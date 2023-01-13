@@ -1,4 +1,5 @@
-name: Deploy Astro site to Pages
+name: Deploy Site to Pages
+
 on:
   push:
     branches: ['main']
@@ -8,44 +9,27 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: write
 
 concurrency:
-  group: 'pages'
+  group: deploy-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
       - name: Install dependencies
         run: yarn install
 
-      - name: Build with Astro
+      - name: Build
         run: yarn build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: ./dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+          folder: dist
+          force: false
+          clean-exclude: preview/
