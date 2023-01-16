@@ -1,4 +1,4 @@
-name: Deploy Site to Pages
+name: Deploy Main
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
 
 concurrency:
@@ -33,4 +33,3 @@ jobs:
           folder: dist
           force: false
           clean-exclude: preview/
-          branch: main

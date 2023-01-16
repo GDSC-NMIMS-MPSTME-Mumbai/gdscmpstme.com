@@ -9,7 +9,7 @@ on:
       - closed
 
 permissions:
-  contents: read
+  contents: write
   pages: write
 
 concurrency:
@@ -33,6 +33,5 @@ jobs:
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: dist
-          preview-branch: main
           umbrella-dir: preview
           action: auto
