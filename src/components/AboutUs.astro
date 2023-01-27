@@ -1,0 +1,58 @@
+---
+
+---
+
+<section id="about-section" class="bg-gdsc-green-light clip-section relative z-10">
+    <img id="globe-decor" class="absolute w-32 z-10 top-32 right-0 hidden lg:block" loading="lazy" src="/decorations/globe-green.svg" alt=""> <!-- Decor 80 -->
+    <div class="pt-10 lg:mb-32">
+        <div class="lg:w-3/4 lg:mx-auto">
+            <p class="font-bold text-2xl text-[#498AF4] pt-28 pl-10 lg:pt-40">About Us</p>
+            <p class="font-bold text-4xl pl-10 tracking-wide leading-snug">What Do We Do?</p>
+            <div class="m-7 lg:flex">
+                <img class="mx-auto w-80 my-14 lg:my-auto" loading="lazy" src="/GIFs/About.gif" alt="img">
+                <p class="mt-8 mx-2 text-neutral-500 md:mx-16">
+                    Google Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome.
+                    <br>
+                    <br>
+                    By joining a GDSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their community.
+                    <br>
+                    <br>
+                    GDSC MPSTME was established in 2021, with its humble beginnings from 10 departments across 6 technical disciplines and flagship events like CodeWars 2021-22 and AI Summit 2021-22 as its legacy.
+                </p>
+            </div>
+        </div>
+        <!-- Activity Cards -->
+        <div class="mt-28 pb-60 mx-8 md:mx-14 lg:gap-x-10 lg:flex lg:justify-center">
+            <div class="card">
+                <header class="text-center text-2xl font-medium">Competitions</header>
+                <div><lottie-player autoplay loop mode="normal" loading="lazy" class="w-2/3 mx-auto lg:w-auto" src="lottie/code.json"></lottie-player></div>
+                <p class="text-center px-9 mt-10">As a club, we have always strived to bring excellence in our work. The fruit of which comes through the winnings from different competitions that members of the GDSC have taken part in. Take a look at some of our most memorable wins!</p>
+            </div>
+            <div class="card">
+                <header class="text-center text-2xl font-medium mb-5">Projects</header>
+                <div><lottie-player autoplay loop mode="normal" loading="lazy" class="w-2/3 mx-auto lg:w-auto" src="lottie/hackathon.json"></lottie-player></div>
+                <p class="text-center px-9 mt-5">Check out snippets and more details about our projects, see their source-code and see what makes them unique!</p>
+            </div>
+            <div class="card">
+                <header class="text-center text-2xl font-medium mb-5">Workshops</header>
+                <div><lottie-player autoplay loop mode="normal" loading="lazy" class="w-2/3 mx-auto lg:w-auto" src="lottie/workshops.json"></lottie-player></div>
+                <p class="text-center px-9 mt-5">Have a look at the statistics of our premier events, which have been a beacon of excellence and brought together scores of different developers under the same roof.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .card{
+        @apply bg-white border border-gdsc-green rounded-2xl py-7 mt-5 lg:max-w-xs;
+	}
+    
+	.clip-section{
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8vw), 0 100%);
+		margin-bottom: -20vw;
+	}
+    
+</style>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

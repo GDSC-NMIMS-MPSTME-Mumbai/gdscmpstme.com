@@ -1,0 +1,38 @@
+---
+
+---
+
+<div class="flex flex-col lg:grid lg:grid-cols-2 place-content-around relative lg:mb-32 lg:pt-14">
+    <h3 class="px-5 text-4xl text-neutral-500 font-semibold mx-auto mt-10 mb-14 md:text-5xl lg:my-auto lg:text-5xl lg:ml-40">
+        Google Developer
+        <br>
+        Student Club, MPSTME.
+        <br>
+        <div id="ele"><span class="element"></span></div>
+    </h3>
+    <img class="w-4/5 mx-auto mb-8 lg:w-auto" src="/images/hero-image.svg" alt="Hero Image">
+    <img class="absolute w-14 top-20 left-40 hidden lg:block" src="/decorations/hero-yellow.svg" alt="">	<!-- Decor -->
+    <img class="absolute w-14 top-16 left-[50%] hidden lg:block" src="/decorations/hero-green.svg" alt="">	<!-- Decor -->
+    <img class="absolute w-12 top-[78%] left-[45%] hidden lg:block" src="/decorations/hero-red.svg" alt="">	<!-- Decor -->
+    <img class="absolute top-full h-[400px] z-20 hidden lg:block" src="/decorations/floating-girl-decor.svg" alt=""> <!-- Decor -->
+</div>
+
+<script>
+	import Typed from 'typed.js';
+	
+	const color = ["#a5d6a7", "#ef9a9a", "#FFe082"];
+
+	var options = {
+		strings: ["A committee", "A society", "A family"],
+		typeSpeed: 40,
+		backSpeed: 40,
+		backDelay: 1600,
+		smartBackspace: false,
+		loop: true,
+		preStringTyped: (arrayPos, self) => {
+			document.getElementById("ele").style.color = color[arrayPos];
+		},
+	};
+
+	var typed = new Typed(".element", options);
+</script>

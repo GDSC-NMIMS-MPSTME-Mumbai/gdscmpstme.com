@@ -1,0 +1,62 @@
+---
+import UpcomingEvent from "./UpcomingEvent.astro";
+
+const response = await fetch("https://strapi.raindrops.tk/api/events?sort=end_date%3Adesc&pagination[limit]=1&populate=image", {
+	method: "GET",
+    headers: {"Accept": "*/*"} 
+}).then(res => res.json())
+const data = response.data[0].attributes
+
+const event = {
+	date:data.start_date.slice(8,10).concat("-",data.end_date.slice(8,10)),
+	month:data.end_date.slice(6,7),
+	title:data.name,
+	descr:data.summary,
+	imgsrc:data.image.data.attributes.formats.thumbnail.url
+}
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" id="curve" class="green" fill="none" preserveAspectRatio="none" viewBox="0 0 1680 40">
+    <path d="M0 40h1680V30S1340 0 840 0 0 30 0 30z" fill="#FFF"></path>
+</svg>
+<div id="event-div" class="bg-white hidden">
+    <UpcomingEvent date={event.date} month={event.month} title={event.title} descr={event.descr} imgsrc={event.imgsrc} />
+</div>
+
+<style>
+    .green {
+		filter: brightness(0) saturate(100%) invert(98%) sepia(10%) saturate(338%) hue-rotate(52deg) brightness(97%) contrast(98%);
+	}
+</style>
+
+<script>
+	let eventDate = "2023-02-06";
+	const currDate = new Date().toJSON().slice(0,10);
+	let curve = document.getElementById("curve");
+	let event_div = document.getElementById("event-div");
+	let about_sec = document.getElementById("about-section");
+	let globe_decor = document.getElementById("globe-decor");
+
+	if (eventDate > currDate) {
+		console.log("Upcoming Event");
+		curve.classList.remove("green");
+		event_div.classList.remove("hidden");
+		about_sec.classList.add("pt-36");
+		globe_decor.classList.remove("top-32");
+		globe_decor.classList.add("top-80");
+	} else if (eventDate==currDate) {
+		console.log("Current Event");
+		curve.classList.remove("green");
+		event_div.classList.remove("hidden");
+		about_sec.classList.add("pt-36");
+		globe_decor.classList.remove("top-32");
+		globe_decor.classList.add("top-80");
+	} else {
+		console.log("Past Event");
+		curve.classList.add("green");
+		event_div.classList.add("hidden");
+		about_sec.classList.remove("pt-36");
+		globe_decor.classList.remove("top-80");
+		globe_decor.classList.add("top-32");
+	}
+</script>

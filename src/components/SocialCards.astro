@@ -3,9 +3,9 @@ const {logo, platform, desc, link} = Astro.props;
 ---
 
 <div class="bg-slate-900 text-slate-500 w-80 p-4  rounded mb-5 hover:bg-slate-800 transition ease-linear duration-400">
-    <a href={`${link}`}>
+    <a href={`${link}`} aria-label={`Link to GDSC ${platform}`}>
         <div class="flex items-center mb-2">
-            <img class="w-8" src={`/images/socials/${logo}`} alt={`${platform} Logo`} />
+            <img class="w-8" src={`/icons/${logo}`} alt={`${platform} Logo`}  loading="lazy" />
             <p class="ml-2">GDSC MPSTME / <span class="text-white">{platform}</span></p>
         </div>
         <p class="leading-5">{desc}</p>
