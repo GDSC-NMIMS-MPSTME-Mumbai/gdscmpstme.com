@@ -1,10 +1,38 @@
 ---
-import WIP from '../components/WIP.astro';
+import UpcomingEvent from '../components/UpcomingEvent.astro';
+import ArchivedEvents from '../components/ArchivedEvents.astro';
 import Layout from '../layouts/Layout.astro';
+import OurPartner from '../components/OurPartner.astro';
+const response = await fetch('https://strapi.raindrops.tk/api/events?sort=id&populate=image').then(res => res.json())
+const events = response.data
 ---
 
 <Layout title="Events | GDSC MPSTME">
   <main>
-    <WIP />
+    <section class="-mb-40">
+      <UpcomingEvent
+      date={"18 - 20"}
+      month={"FEB"}
+      title={"AI Summit"}
+      type={"Tech Talk"}
+      descr={"Join us as we host industry-experts and top researchers in the field of Artificial Intelligence, Machine Learning and Deep Learning to give you an insight into the world of Artificial Intelligence like no other."}
+      imgsrc={"https://firebasestorage.googleapis.com/v0/b/gdsc-website-47187.appspot.com/o/images%2Fevents%2FAI%20Summit%2FEventLogo_AI%20Summit.png?alt=media&token=df0866b6-d5ea-4162-af8d-50d56b8c04cf"}
+      />
+    </section>
+    <ArchivedEvents
+    
+    />
+    <OurPartner
+    imgsrc={"https://firebasestorage.googleapis.com/v0/b/gdsc-website-47187.appspot.com/o/images%2Fevents%2FAI%20Summit%2FEventLogo_AI%20Summit.png?alt=media&token=df0866b6-d5ea-4162-af8d-50d56b8c04cf"}
+    s_name={"Wolfram Research Inc."}
+    s_about={"Founded by Stephen Wolfram in 1987, Wolfram Research is one of the world's most respected computer, web and cloud software companies—as well as a powerhouse of scientific and technical innovation. As a pioneer in computation and computational knowledge, we have pursued a long-term vision to develop the science, technology and tools to make computation an ever-more-potent force in today's and tomorrow's world."}
+    />
   </main>
 </Layout>
+
+<style>
+  .clip-section{
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8vw), 0 100%);
+  margin-bottom: -10vw;
+}
+</style>

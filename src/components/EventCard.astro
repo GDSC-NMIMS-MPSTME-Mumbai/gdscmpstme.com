@@ -1,0 +1,11 @@
+---
+const {date,imgsrc,title,descr} = Astro.props
+---
+
+<div class="flex flex-col  items-center bg-white border-[3px] border-yellow-400 p-2 mb-10">
+    <p class="ml-auto text-xs bg-yellow-400 rounded-[5px] p-1">{date}</p>
+    <img class="-mt-8 w-4/5" src={imgsrc} alt="">
+    <p class="-mt-10 text-center text-xl font-bold ">{title}</p>
+    <p class="mt-5 px-8 mb-3 text-base w-60 md:w-64 ">{descr}</p>
+</div>
+

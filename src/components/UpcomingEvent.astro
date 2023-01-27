@@ -1,0 +1,27 @@
+---
+const {date,month,title,type,descr,imgsrc} = Astro.props
+---
+
+<div class="flex flex-col mt-10 bg-purple-300 max-w-[80%] z-20 relative mx-auto rounded-3xl p-8">
+    <div class="flex flex-col ml-auto">
+        <p class="text-3xl ml-auto text-purple-900 opacity-80">{date}</p>
+        <p class="text-xl tracking-[0.4em] ml-auto text-purple-900 uppercase opacity-80">{month}</p>
+    </div>
+    <div class="flex flex-col px-8 lg:flex-row">
+        <img class="-mt-20 -mb-20 md:w-9/12 md:mx-auto lg:m-0 lg:w-2/5 lg:-my-4 xl:-my-24" src={imgsrc} alt="">
+        <div class="flex flex-col text-center">
+            <p class="text-4xl font-bold md:mr-auto md:text-5xl lg:mb-4">{title}</p>
+            <p class="w-24 text-sm py-0.5 text-white rounded-full bg-violet-900 mt-2 opacity-60 md:mr-auto md:mx-2/4 lg:m-0 lg:mb-5">{type}</p>
+            <p class="text-lg mt-3 text-justify md:mr-auto md:text-xl lg:m-0 lg:pr-2/3">{descr}</p>
+            <div class="flex flex-col mt-4 md:flex-row md:mr-auto">
+                <a class=" bg-purple-800 text-white rounded-[3px] w-[65vw] mb-4 px-3 py-2 md:w-[15vw] md:mr-4" href="">More Details</a>
+                <a class="border-2 border-purple-700 rounded-[3px] w-[65vw] px-3 py-2 md:w-[15vw] md:h-[40px]" href="">Register</a>
+            </div>
+        </div>
+    </div>
+    <img class="hidden md:block md:absolute z-10 -left-7 -top-7" src="./decorations/code.svg" alt="">
+    <img class="hidden md:block md:absolute transform rotate-12 z-10 bottom-20 -right-10" src="./decorations/lines-green.svg" alt="">
+</div>
+
+
+

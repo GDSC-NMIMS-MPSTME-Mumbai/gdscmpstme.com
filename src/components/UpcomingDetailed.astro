@@ -1,0 +1,127 @@
+---
+const {date,month,title,type,descr,imgsrc} = Astro.props
+---
+<div class="flex flex-col bg-purple-200 text-center px-8 pb-40 md:flex-row md:items-center md:px-60 md:pt-24 ">
+    <div class="flex flex-col ">
+        <img class="w-[400px] self-center md:w-[70vw]" src={imgsrc} alt="">
+        <p class="text-3xl font-bold -mt-16 mb-4 md:text-4xl  ">{title}</p>
+    </div>
+    <div class="flex flex-col md:mt-24 md:items-center md:pr-20 ">
+        <p class="text-justify text-xl md:text-2xl">{descr}</p>
+        <a class="mt-8 text-lg bg-purple-700 rounded-[5px] text-white px-3 py-2 mb-4 md:mr-auto md:w-1/4" href="">Register</a>
+    </div>
+</div>
+
+<div class="mx-auto w-72 md:w-2/4">
+    <div class="flex flex-col absolute p-12 -mt-32 w-72 bg-green-200 border-2 border-green-500 rounded-3xl z-10 md:flex-row md:items-center md:w-2/4 md:-mt-20 md:justify-between md:px-36">
+        <div class="flex flex-col items-center mb-6 md:mr-8 md:mb-0">
+            <svg width="70" height="75" viewBox="0 0 70 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M63.4615 5.76923H51.9231V0H46.1539V5.76923H23.0769V0H17.3077V5.76923H5.76923C4.2396 5.77076 2.77307 6.37908 1.69146 7.46069C0.609846 8.5423 0.00152734 10.0088 0 11.5385V69.2308C0.00152734 70.7604 0.609846 72.2269 1.69146 73.3085C2.77307 74.3902 4.2396 74.9985 5.76923 75H63.4615C64.9912 74.9985 66.4577 74.3902 67.5393 73.3085C68.6209 72.2269 69.2292 70.7604 69.2308 69.2308V11.5385C69.2292 10.0088 68.6209 8.5423 67.5393 7.46069C66.4577 6.37908 64.9912 5.77076 63.4615 5.76923ZM5.76923 11.5385H17.3077V17.3077H23.0769V11.5385H46.1539V17.3077H51.9231V11.5385H63.4615V23.0769H5.76923V11.5385ZM5.76923 28.8462H20.1923V46.1538H5.76923V28.8462ZM43.2692 69.2308H25.9615V51.9231H43.2692V69.2308ZM43.2692 46.1538H25.9615V28.8462H43.2692V46.1538ZM49.0385 69.2308V51.9231H63.4615L63.4644 69.2308H49.0385Z" fill="black"/>
+            </svg>
+            <p class="mt-3">18 - 20 FEB</p>
+        </div>
+        <div class="flex flex-col items-center mb-6 md:mr-8 md:mb-0">
+            <svg width="76" height="75" viewBox="0 0 76 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M37.7307 69.6429C41.9518 69.6429 46.1315 68.8115 50.0313 67.1961C53.931 65.5808 57.4744 63.2132 60.4591 60.2284C63.4439 57.2437 65.8115 53.7003 67.4268 49.8005C69.0422 45.9008 69.8736 41.7211 69.8736 37.5C69.8736 33.2789 69.0422 29.0992 67.4268 25.1995C65.8115 21.2997 63.4439 17.7563 60.4591 14.7716C57.4744 11.7868 53.931 9.4192 50.0313 7.80387C46.1315 6.18854 41.9518 5.35714 37.7307 5.35714C29.2059 5.35714 21.0302 8.74361 15.0023 14.7716C8.97433 20.7995 5.58786 28.9752 5.58786 37.5C5.58786 46.0248 8.97433 54.2005 15.0023 60.2284C21.0302 66.2564 29.2059 69.6429 37.7307 69.6429ZM37.7307 75C27.7851 75 18.2468 71.0491 11.2142 64.0165C4.18159 56.9839 0.230713 47.4456 0.230713 37.5C0.230713 27.5544 4.18159 18.0161 11.2142 10.9835C18.2468 3.95088 27.7851 0 37.7307 0C47.6763 0 57.2146 3.95088 64.2472 10.9835C71.2798 18.0161 75.2307 27.5544 75.2307 37.5C75.2307 47.4456 71.2798 56.9839 64.2472 64.0165C57.2146 71.0491 47.6763 75 37.7307 75Z" fill="black"/>
+                <path d="M35.0524 16.0714C35.7628 16.0714 36.4441 16.3536 36.9464 16.856C37.4487 17.3583 37.7309 18.0396 37.7309 18.75V40.1786C37.7309 40.889 37.4487 41.5703 36.9464 42.0726C36.4441 42.5749 35.7628 42.8571 35.0524 42.8571C34.3419 42.8571 33.6606 42.5749 33.1583 42.0726C32.656 41.5703 32.3738 40.889 32.3738 40.1786V18.75C32.3738 18.0396 32.656 17.3583 33.1583 16.856C33.6606 16.3536 34.3419 16.0714 35.0524 16.0714Z" fill="black"/>
+                <path d="M35.0524 37.5H56.4809C58.2666 37.5 59.1595 38.3929 59.1595 40.1786C59.1595 41.9643 58.2666 42.8571 56.4809 42.8571H35.0524C33.2666 42.8571 32.3738 41.9643 32.3738 40.1786C32.3738 38.3929 33.2666 37.5 35.0524 37.5Z" fill="black"/>
+            </svg>
+                <p class="mt-3">2:00 to 4:00 PM</p>
+        </div>
+        <div class="flex flex-col items-center mb-6 last:md:mb-0">
+            <svg width="65" height="75" viewBox="0 0 65 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32.3736 0C40.8984 0 49.074 3.38647 55.102 9.41442C61.13 15.4424 64.5164 23.618 64.5164 32.1429C64.5164 45.45 54.3736 59.3929 34.5164 74.2857C33.8982 74.7494 33.1463 75 32.3736 75C31.6008 75 30.8489 74.7494 30.2307 74.2857C10.3736 59.3929 0.230713 45.45 0.230713 32.1429C0.230713 23.618 3.61718 15.4424 9.64514 9.41442C15.6731 3.38647 23.8488 0 32.3736 0ZM32.3736 21.4286C29.532 21.4286 26.8067 22.5574 24.7974 24.5667C22.7881 26.576 21.6593 29.3013 21.6593 32.1429C21.6593 34.9845 22.7881 37.7097 24.7974 39.719C26.8067 41.7283 29.532 42.8571 32.3736 42.8571C35.2152 42.8571 37.9404 41.7283 39.9497 39.719C41.959 37.7097 43.0879 34.9845 43.0879 32.1429C43.0879 29.3013 41.959 26.576 39.9497 24.5667C37.9404 22.5574 35.2152 21.4286 32.3736 21.4286Z" fill="black"/>
+            </svg>
+                <p class="mt-3">Online Event</p>
+        </div>
+    </div>
+</div>
+
+<div class=" pt-[440px] pb-24 px-10 bg-yellow-100 clip-section md:pt-56 md:px-44 md:text-justify">
+    
+        <p class="text-3xl font-bold mb-6">More About {title}</p>
+        <p>
+            GDSC MPSTME is on its way to leave a mark of perfection with its upcoming global event: “The AI Summit”. It is an event featuring some of the most appreciated people in the field of Technology and Science. 
+
+Going live from 18th to 20th February, the goal of this AI Summit is to empower the current CS involved youth about what’s next in AI and how it is going to affect our future. With all of the major companies like Facebook (rebranding itself as Meta), Apple (adding AI into their products) and Google (building AI tech) turning there attention towards AI and Multi-reality to expand their area of working; the world would expect the working part of the population to be in coherence with theoretical, practical and industrial use-case side of AI. This is what the AI Summit hopes to achieve.
+
+To bring this to wonderful thought into action, we have 3 amazing speakers coming up for the event to highlight this highly interesting topic!
+
+Watch this space as we reveal more about our speakers! <br> <br>
+            <b>Watch this space as we reveal more about our speakers!</b>
+        </p>
+</div>
+
+<div class="px-10 pt-24 pb-16 -mt-24 bg-red-400 bg-opacity-20 clip-section2 md:px-44 md:pt-44">
+    <p class="text-3xl font-bold mt-10 mb-10">Meet Our Speakers</p>
+    <div>
+
+        <div class="my-6 relative mb-24 md:flex md:mb-24">
+            <div class="mb-12 md:pl-24 md:pr-44">
+                <p class="text-red-600 font-bold text-md md:text-lg">Mr. Krish Naik</p>
+                <p class="text-gray-500 font-bold text-sm mt-1 mb-4 md:text-md">Founder and Teacher, iNeuron.ai</p>
+                <p class="text-justify text-md mb-16">
+                    Vitae ac, ultrices risus elementum quam massa fusce magna eget.
+                    Nulla ornare velit magna rhoncus erat.
+                    Dictum sollicitudin arcu cursus convallis fermentum senectus tristique odio.
+                    Sollicitudin sed in bibendum aliquet gravida netus at tellus. Vitae integer vehicula viverra morbi at.
+                    Justo, in egestas magna euismod nec sit.
+                </p>
+            </div>
+            <img class="w-3/4 mx-auto sm:h-auto md:h-[250px] md:w-auto" src="https://firebasestorage.googleapis.com/v0/b/gdsc-website-47187.appspot.com/o/images%2Fspeakers%2FAI%20Summit%2Fspeaker2.webp?alt=media&token=4066cefd-251a-4ba3-b111-89357ab30cd2" alt="">
+            <svg class="absolute top-[34vh] -left-7 -z-10 md:-top-[25px] md:left-[70vw]" width="200" height="300" viewBox="0 0 200 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="380" fill="#EB4A3D"/>
+            </svg>
+        </div>
+
+        <div class="my-6 relative mb-24 md:flex md:flex-row-reverse md:mb-24 ">
+            <div class="mb-12 md:pl-24 md:pr-44">
+                <p class="text-green-600 font-bold text-md md:text-lg">Mr. Krish Naik</p>
+                <p class="text-gray-500 font-bold text-sm mt-1 mb-4 md:text-md">Founder and Teacher, iNeuron.ai</p>
+                <p class="text-justify text-md mb-16">
+                    Vitae ac, ultrices risus elementum quam massa fusce magna eget.
+                    Nulla ornare velit magna rhoncus erat.
+                    Dictum sollicitudin arcu cursus convallis fermentum senectus tristique odio.
+                    Sollicitudin sed in bibendum aliquet gravida netus at tellus. Vitae integer vehicula viverra morbi at.
+                    Justo, in egestas magna euismod nec sit.
+                </p>
+            </div>
+            <img class="w-3/4 mx-auto md:h-[250px] md:w-auto" src="https://firebasestorage.googleapis.com/v0/b/gdsc-website-47187.appspot.com/o/images%2Fspeakers%2FAI%20Summit%2Fspeaker2.webp?alt=media&token=4066cefd-251a-4ba3-b111-89357ab30cd2" alt="">
+            <svg class="absolute top-[34vh] -left-7 -z-10 md:-top-[25px] md:-left-20" width="200" height="300" viewBox="0 0 200 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="380" fill="#3CAB5A"/>
+            </svg>
+        </div>
+
+        <div class="my-6 relative md:flex">
+            <div class="mb-12 md:pl-24 md:pr-44">
+                <p class="text-red-600 font-bold text-md md:text-lg">Mr. Krish Naik</p>
+                <p class="text-gray-500 font-bold text-sm mt-1 mb-4 md:text-md">Founder and Teacher, iNeuron.ai</p>
+                <p class="text-justify text-md mb-16">
+                    Vitae ac, ultrices risus elementum quam massa fusce magna eget.
+                    Nulla ornare velit magna rhoncus erat.
+                    Dictum sollicitudin arcu cursus convallis fermentum senectus tristique odio.
+                    Sollicitudin sed in bibendum aliquet gravida netus at tellus. Vitae integer vehicula viverra morbi at.
+                    Justo, in egestas magna euismod nec sit.
+                </p>
+            </div>
+            <img class="w-3/4 mx-auto md:h-[250px] md:w-auto" src="https://firebasestorage.googleapis.com/v0/b/gdsc-website-47187.appspot.com/o/images%2Fspeakers%2FAI%20Summit%2Fspeaker2.webp?alt=media&token=4066cefd-251a-4ba3-b111-89357ab30cd2" alt="">
+            <svg class="absolute top-[34vh] -left-7 -z-10 md:-top-[25px] md:left-[70vw]" width="200" height="300" viewBox="0 0 200 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="380" fill="#FBBF0E"/>
+            </svg>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+<style>
+    .clip-section{
+    clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 100%);
+    /* margin-bottom: -10vw; */
+    }
+    
+</style>
+
+
+

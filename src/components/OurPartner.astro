@@ -1,0 +1,31 @@
+---
+const {imgsrc, s_name, s_about} = Astro.props
+---
+
+<div class="p-16 bg-red-400 bg-opacity-20 clip-section relative z-40">
+    
+    <div class="-mb-12">
+        <p class="text-blue-700 font-bold text-lg">Partner</p>
+        <p class="text-3xl font-bold">Our Partner Enables Us To Give Our Bests</p>
+    </div>
+    <div class="mb-20 mt-12 md:flex md:flex-row md:mt-10 md:items-center">
+        <img class="w-[300px] mx-auto md:-mb-24" src={imgsrc} alt="">
+        <div class="-mt-16 md:flex md:flex-col md:mt-20">
+            <p class="text-2xl mb-4">
+                {s_name}
+            </p>
+            <p class="text-lg text-justify">
+                {s_about}
+            </p>
+        </div>
+    </div>
+    <!-- <img class="absolute" src="./decorations/dots-red.svg" alt=""> -->
+    
+</div>
+
+<style>
+    .clip-section{
+    clip-path: polygon(0 0, 100% 0%, 100% 93%, 0% 100%);
+    /* margin-bottom: -10vw; */
+    }
+</style>

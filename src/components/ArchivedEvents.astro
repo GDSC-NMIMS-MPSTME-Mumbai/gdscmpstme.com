@@ -1,0 +1,80 @@
+---
+import EventCard from "./EventCard.astro";
+const response = await fetch('https://strapi.raindrops.tk/api/events?sort=id&populate=image').then(r => r.json())
+const events = response.data
+---
+
+<div class=" mt-5 py-32 px-10 bg-yellow-100 clip-section">
+    <div class="mt-20 md:mt-32">
+        <p class="text-blue-700 font-bold text-lg">Events Archive</p>
+        <p class="text-3xl font-bold mb-10 md:mb-20">Successfull, Memorable Events Organized So Far</p>
+        <div class="flex flex-nowrap gap-x-8 overflow-x-scroll mt-8 mb-16 scrollClass">
+            <!-- {events.map(({attributes: {name,description,type,image}}) => (
+                <EventCard
+                title={name}
+                descr={description}
+                imgsrc={image}
+                />
+            ))} -->
+            
+            <EventCard
+            date={"Oct 12, 2022"}
+            title={"AI Summit"}
+            descr={"Join us as we host industry-experts and top researchers in the field of Artificial Intelligence, Machine Learning and Deep Learning to give you an insight into the world of Artificial Intelligence like no other."}
+            imgsrc={"https://firebasestorage.googleapis.com/v0/b/gdsc-website-47187.appspot.com/o/images%2Fevents%2FAI%20Summit%2FEventLogo_AI%20Summit.png?alt=media&token=df0866b6-d5ea-4162-af8d-50d56b8c04cf"}
+            />
+
+            <EventCard
+            date={"Oct 12, 2022"}
+            title={"AI Summit"}
+            descr={"Join us as we host industry-experts and top researchers in the field of Artificial Intelligence, Machine Learning and Deep Learning to give you an insight into the world of Artificial Intelligence like no other."}
+            imgsrc={"https://firebasestorage.googleapis.com/v0/b/gdsc-website-47187.appspot.com/o/images%2Fevents%2FAI%20Summit%2FEventLogo_AI%20Summit.png?alt=media&token=df0866b6-d5ea-4162-af8d-50d56b8c04cf"}
+            />
+
+            <EventCard
+            date={"Oct 12, 2022"}
+            title={"AI Summit"}
+            descr={"Join us as we host industry-experts and top researchers in the field of Artificial Intelligence, Machine Learning and Deep Learning to give you an insight into the world of Artificial Intelligence like no other."}
+            imgsrc={"https://firebasestorage.googleapis.com/v0/b/gdsc-website-47187.appspot.com/o/images%2Fevents%2FAI%20Summit%2FEventLogo_AI%20Summit.png?alt=media&token=df0866b6-d5ea-4162-af8d-50d56b8c04cf"}
+            />
+
+            <EventCard
+            date={"Oct 12, 2022"}
+            title={"AI Summit"}
+            descr={"Join us as we host industry-experts and top researchers in the field of Artificial Intelligence, Machine Learning and Deep Learning to give you an insight into the world of Artificial Intelligence like no other."}
+            imgsrc={"https://firebasestorage.googleapis.com/v0/b/gdsc-website-47187.appspot.com/o/images%2Fevents%2FAI%20Summit%2FEventLogo_AI%20Summit.png?alt=media&token=df0866b6-d5ea-4162-af8d-50d56b8c04cf"}
+            />
+
+            <EventCard
+            date={"Oct 12, 2022"}
+            title={"AI Summit"}
+            descr={"Join us as we host industry-experts and top researchers in the field of Artificial Intelligence, Machine Learning and Deep Learning to give you an insight into the world of Artificial Intelligence like no other."}
+            imgsrc={"https://firebasestorage.googleapis.com/v0/b/gdsc-website-47187.appspot.com/o/images%2Fevents%2FAI%20Summit%2FEventLogo_AI%20Summit.png?alt=media&token=df0866b6-d5ea-4162-af8d-50d56b8c04cf"}
+            />
+        </div>
+    </div>
+    
+</div>
+
+
+
+<style>
+    .clip-section{
+    clip-path: polygon(100% 100%, 0% 100%, 0% 10%, 100% 0%, 100% 0%);
+    /* margin-bottom: -10vw; */
+    }
+    
+    .scrollClass::-webkit-scrollbar {
+    width: 10px;
+    }
+
+    .scrollClass::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    }
+
+    .scrollClass::-webkit-scrollbar-thumb {
+    background-color: #FBBF0E;
+    border-radius: 10px;
+    }
+</style>
