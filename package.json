@@ -34,5 +34,9 @@
     "lint-staged": "^13.1.0",
     "prettier": "2.8.3",
     "prettier-plugin-astro": "^0.7.2"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/GDSC-NMIMS-MPSTME-Mumbai/gdscmpstme.com.git",
+  "author": "Kamakshya Nanda <91257779+kamakshyan@users.noreply.github.com>",
+  "license": "MIT"
 }
