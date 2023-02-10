@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import AchievementsDetailsCard from "../components/achievements/AchievementsDetailsCard.astro";
 import achievements from "../assets/achievements.png";
 ---
 
@@ -46,18 +47,23 @@ import achievements from "../assets/achievements.png";
 						</div>
 					</div>
 				</div>
-                <div class="mt-8 md:mt-20">
-                    <div
-                        class="text-gdsc-green font-bold text-xl mb-2 pl-3 md:pl-48"
-                    >
-                    Achievements Archive
-                    </div>
-                    <div
-                        class="text-gray-900 font-bold text-5xl mb-2 pl-3 md:pl-48"
-                    >
-                        Successful, Memorable Achievements So Far
-                    </div>
-                </div>
+				<div class="mt-8 md:mt-20">
+					<div
+						class="text-gdsc-green font-bold text-xl mb-2 pl-3 md:pl-48"
+					>
+						Achievements Archive
+					</div>
+					<div
+						class="text-gray-900 font-bold text-4xl mb-2 pl-3 md:pl-48"
+					>
+						Successful, Memorable Achievements So Far
+					</div>
+					<div
+						class="grid md:grid-cols-3 items-center justify-center"
+					>
+						<AchievementsDetailsCard />
+					</div>
+				</div>
 			</div>
 		</div>
 	</main>
