@@ -1,4 +1,4 @@
-const { API_BASE_URL } = import.meta.env;
+const { API_BASE_URL, API_KEY } = import.meta.env;
 import { GraphQLClient } from 'graphql-request';
 import {
   GetMembersQuery,
@@ -9,7 +9,11 @@ import {
   GetProjectsQuery,
 } from './queries';
 
-const client = new GraphQLClient(`${API_BASE_URL}/graphql`);
+const client = new GraphQLClient(`${API_BASE_URL}/graphql`, {
+  headers: {
+    Authorization: `bearer ${API_KEY}`,
+  },
+});
 
 async function getTeamMembers(): Promise<Member[]> {
   const { members } = await client.request(GetMembersQuery);

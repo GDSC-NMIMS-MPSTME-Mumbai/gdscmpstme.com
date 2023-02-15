@@ -65,3 +65,8 @@ interface Project {
   imgUrl: string;
   contributors: Contributor[];
 }
+
+interface ImportMetaEnv {
+  readonly API_BASE_URL: string;
+  readonly API_KEY: string;
+}
