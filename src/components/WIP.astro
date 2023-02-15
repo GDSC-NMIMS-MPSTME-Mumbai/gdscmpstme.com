@@ -1,10 +1,15 @@
 ---
+export interface Props {
+  text?: string;
+}
+
+const { text = '{WIP}' } = Astro.props;
 ---
 
 <div
   class="h-screen w-11/12 mx-auto my-5 bg-purple-300 grid place-items-center"
 >
   <span class="text-5xl font-mono font-bold text-purple-800 animate-pulse">
-    {'{WIP}'}
+    {text}
   </span>
 </div>
