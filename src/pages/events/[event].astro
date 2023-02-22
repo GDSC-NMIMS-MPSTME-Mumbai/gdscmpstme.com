@@ -1,0 +1,26 @@
+---
+import WIP from '../../components/WIP.astro';
+import Layout from '../../layouts/Layout.astro';
+
+import { getEvents, getEvent } from '../../utils/fetchData';
+
+export async function getStaticPaths() {
+  const events = await getEvents();
+
+  return events.map(event => ({
+    params: {
+      event: event.slug,
+    },
+  }));
+}
+
+const { event: slug } = Astro.params;
+
+const event = await getEvent(slug);
+---
+
+<Layout title={`${event.name} | GDSC MPSTME`}>
+  <main>
+    <WIP text={event.name} />
+  </main>
+</Layout>
