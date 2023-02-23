@@ -5,7 +5,7 @@ interface Member {
   name: string;
   designation: string;
   department: string;
-  imgUrl: string;
+  imgUrl: string | null;
 }
 
 interface EventBasic {
@@ -13,7 +13,7 @@ interface EventBasic {
   summary: string;
   theme: string;
   slug: string;
-  registrationLink: string;
+  registrationLink: string | null;
   startDate: Date;
   endDate: Date;
   imgUrl: string;
@@ -26,7 +26,7 @@ interface EventWithTags extends EventBasic {
 interface Sponsor {
   name: string;
   link: string;
-  tier: 'Giga' | 'Tera';
+  tier: 'Giga' | 'Tera' | null;
   imgUrl: string;
 }
 
@@ -35,6 +35,15 @@ interface Speaker {
   designation: string;
   bio: string;
   imgUrl: string;
+  website: string | null;
+  youtubeLink: string | null;
+  wikipediaLink: string | null;
+  twitterLink: string | null;
+  instagramLink: string | null;
+  githubLink: string | null;
+  linkedinLink: string | null;
+  blogLink: string | null;
+  googleScholarLink: string | null;
 }
 
 interface EventDetailed extends EventWithTags {
