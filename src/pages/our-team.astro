@@ -7,18 +7,65 @@ import OurTeam from '../components/our-team/OurTeam';
 //Fetching Team Members from Strapi
 const TeamMembers = await getTeamMembers();
 
-const priority = {
-  'Secretary of Administration and HR': 0,
-  'Lead of GDSC MPSTME': 0,
-  'Secretary of Projects': 0,
-  'Secretary of Operations': 0,
-  'Secretary of Club Relations': 0,
-  'Department Lead': 1,
-  Executive: 2,
-};
+const sortedData = TeamMembers.sort((a, b) => {
+  // First, sort by Super Core members
+  if (a.department === 'Super Core' && b.department !== 'Super Core') {
+    return -1; // a comes before b
+  } else if (b.department === 'Super Core' && a.department !== 'Super Core') {
+    return 1; // b comes before a
+  }
 
-TeamMembers.sort((a, b) => priority[a.designation] - priority[b.designation]);
-console.log(TeamMembers);
+  // Then, sort by Web Dev Department leads
+  if (a.department === 'Web Dev' && b.department === 'Web Dev') {
+    if (
+      a.designation === 'Department Lead' &&
+      b.designation !== 'Department Lead'
+    ) {
+      return -1; // a comes before b
+    } else if (
+      b.designation === 'Department Lead' &&
+      a.designation !== 'Department Lead'
+    ) {
+      return 1; // b comes before a
+    }
+  }
+  if (
+    a.department === 'Web Dev' &&
+    b.department != 'Web Dev' &&
+    a.designation === 'Department Lead'
+  ) {
+    return -1;
+  } else if (b.department === 'Web Dev' && a.department != 'Web Dev') {
+    return 1;
+  }
+
+  // Then, sort by all other department leads
+  if (
+    a.designation === 'Department Lead' &&
+    b.designation !== 'Department Lead'
+  ) {
+    return -1; // a comes before b
+  } else if (
+    b.designation === 'Department Lead' &&
+    a.designation !== 'Department Lead'
+  ) {
+    return 1; // b comes before a
+  }
+
+  if (
+    a.department === 'Web Dev' &&
+    b.department != 'Web Dev' &&
+    a.designation === 'Executive'
+  ) {
+    return -1;
+  } else if (b.department === 'Web Dev' && a.department != 'Web Dev') {
+    return 1;
+  }
+  // If both have same designation and department or are not any of the above categories
+  return 0; // no change in order
+});
+
+console.log(sortedData); // displays the sorted list of objects
 ---
 
 <Layout title="Our Team | GDSC MPSTME" background="bg-gdsc-yellow-light">
