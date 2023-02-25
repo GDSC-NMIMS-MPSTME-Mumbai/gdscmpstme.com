@@ -1,0 +1,105 @@
+---
+import UpcomingEvent from './UpcomingEvent.astro';
+import { getLatestEvent } from '../../utils/fetchData';
+
+const latestEvent = await getLatestEvent();
+
+const currDate = new Date();
+const UpcomingEvents = true;
+// if (latestEvent.endDate<currDate) {
+// 	const UpcomingEvent = true;
+// } else {
+// 	const UpcomingEvent = false;
+// }
+
+const event = {
+  startDate: latestEvent.startDate
+    .getDate()
+    .toString()
+    .concat(
+      ' ',
+      latestEvent.startDate.toLocaleString('default', { month: 'short' }),
+    ),
+  endDate: latestEvent.endDate
+    .getDate()
+    .toString()
+    .concat(
+      ' ',
+      latestEvent.endDate.toLocaleString('default', { month: 'short' }),
+    ),
+  month: latestEvent.startDate.toLocaleString('default', { month: 'short' }),
+  title: latestEvent.name,
+  descr: latestEvent.summary,
+  imgsrc: latestEvent.imgUrl,
+};
+
+// const response = await fetch("https://strapi.raindrops.tk/api/events?sort=end_date%3Adesc&pagination[limit]=1&populate=image", {
+// 	method: "GET",
+//     headers: {"Accept": "*/*"}
+// }).then(res => res.json())
+// const data = response.data[0].attributes
+
+// const currDate = new Date().toJSON().slice(0,10);
+// if (data.end_date<=currDate) {
+// 	const UpcomingEvent = true
+// } else {
+// 	const UpcomingEvent = false
+// }
+
+// const event = {
+// 	date:data.start_date.slice(8,10).concat("-",data.end_date.slice(8,10)),
+// 	month:data.end_date.slice(6,7),
+// 	title:data.name,
+// 	descr:data.summary,
+// 	imgsrc:data.image.data.attributes.formats.thumbnail.url
+// }
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  id="curve"
+  class="green"
+  fill="none"
+  preserveAspectRatio="none"
+  viewBox="0 0 1680 40"
+>
+  <path d="M0 40h1680V30S1340 0 840 0 0 30 0 30z" fill="#FFF"></path>
+</svg>
+<div id="event-div" class="bg-white hidden">
+  <UpcomingEvent
+    startDate={event.startDate}
+    endDate={event.endDate}
+    month={event.month}
+    title={event.title}
+    desc={event.descr}
+    imgsrc={event.imgsrc}
+  />
+</div>
+
+<style>
+  .green {
+    filter: brightness(0) saturate(100%) invert(98%) sepia(10%) saturate(338%)
+      hue-rotate(52deg) brightness(97%) contrast(98%);
+  }
+</style>
+
+<script define:vars={{ UpcomingEvents }}>
+  let curve = document.getElementById('curve');
+  let event_div = document.getElementById('event-div');
+  let about_sec = document.getElementById('about-section');
+  let globe_decor = document.getElementById('globe-decor');
+
+  if (UpcomingEvents) {
+    curve.classList.remove('green');
+    event_div.classList.remove('hidden');
+    about_sec.classList.add('pt-36');
+    globe_decor.classList.remove('top-32');
+    globe_decor.classList.add('top-80');
+  } else {
+    curve.classList.add('green');
+    event_div.classList.add('hidden');
+    about_sec.classList.remove('pt-36');
+    globe_decor.classList.remove('top-80');
+    globe_decor.classList.add('top-32');
+  }
+</script>
