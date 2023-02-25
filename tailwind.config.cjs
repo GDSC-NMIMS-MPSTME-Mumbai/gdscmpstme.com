@@ -10,30 +10,29 @@ module.exports = {
       },
       colors: {
         gdsc: {
-            'grey': {
-              light: '#F4F4F4',
-            },
-            'green': {
-                light: '#E8F5E9',
-                DEFAULT: '#3CAB5A',
-            },
-            'yellow': {
-                light: '#FFF8E1',
-                DEFAULT: '#FBBF0E',
-            },
-            'blue': {
-                light: '#75A5F7',
-                lighter: '#E3F2FD',
-                DEFAULT: '#EB4A3D',
-            },
-            'red': {
-                light: '#FFEBEE',
-                DEFAULT: '#EB4A3D',
-            },
-            'purple':{
-                light: '#E9D1FE',
-                DEFAULT: '#6B21A8'
-            }
+          grey: {
+            light: '#F4F4F4',
+          },
+          green: {
+            light: '#E8F5E9',
+            DEFAULT: '#3CAB5A',
+          },
+          yellow: {
+            light: '#FFF8E1',
+            DEFAULT: '#FBBF0E',
+          },
+          blue: {
+            dark: '#498AF4',
+            light: '#E3F2FD',
+            DEFAULT: '#42A5F5',
+          },
+          red: {
+            light: '#FFEBEE',
+            DEFAULT: '#EB4A3D',
+          },
+          purple: {
+            light: '#E9D1FE',
+          },
         },
       },
     },

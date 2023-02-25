@@ -1,0 +1,11 @@
+# lock file
+yarn.lock
+
+# github workflows
+.github
+
+# lottie files
+lottie/
+
+# other
+tsconfig.json
