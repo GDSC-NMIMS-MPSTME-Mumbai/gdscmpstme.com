@@ -1,0 +1,60 @@
+---
+const { startDate, startMonth, endDate, endMonth, title, desc, imgsrc } =
+  Astro.props;
+---
+
+<div
+  class="w-4/5 mx-auto py-8 px-14 bg-gdsc-purple-light rounded-3xl relative top-28 z-20 md:pr-0 lg:pb-0"
+>
+  <div class="flex text-purple-900 md:pr-14">
+    <div class="flex ml-auto">
+      <div class="flex flex-col">
+        <p class="text-xl lg:text-3xl mx-auto">{startDate}</p>
+        <p class="lg:text-lg tracking-wider uppercase">{startMonth}</p>
+      </div>
+      <div class="text-2xl mx-1 lg:text-3xl lg:mx-2">-</div>
+      <div class="flex flex-col">
+        <p class="text-xl lg:text-3xl mx-auto">{endDate}</p>
+        <p class="lg:text-lg tracking-wider uppercase">{endMonth}</p>
+      </div>
+    </div>
+  </div>
+  <div class="md:flex md:-mt-12">
+    <div class="flex flex-col justify-between items-center">
+      <div class="flex flex-col md:flex-row">
+        <div class="md:w-3/4 lg:pt-5">
+          <p
+            class="text-3xl font-bold text-[#2A004C] pt-5 md:pt-0 md:mr-auto md:max-w-sm md:text-left lg:max-w-fit"
+          >
+            {title}
+          </p>
+          <p
+            class="text-lg text-[#2A004C] mt-3 text-justify md:mr-auto lg:pt-5"
+          >
+            {desc}
+          </p>
+          <div
+            class="flex flex-col text-center mt-4 md:mr-auto lg:flex-row lg:pt-5"
+          >
+            <a
+              class="bg-purple-700 text-white rounded-md mb-4 px-5 py-2 md:mr-4"
+              href="">More Details{' >'}</a
+            >
+            <a
+              class="border-2 border-purple-700 rounded-md mb-4 px-5 py-2 md:mr-4"
+              href="">Register{' >'}</a
+            >
+          </div>
+        </div>
+        <div class="flex items-center justify-center">
+          <img src={imgsrc} alt="event-image" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <img
+    src="/decorations/lines-green.svg"
+    class="absolute bottom-24 -right-10 w-20 rotate-12 hidden lg:block"
+    alt=""
+  />
+</div>
