@@ -1,0 +1,32 @@
+---
+import Icon from "astro-icon";
+const {
+    speakerName, speakerDesignation,speakerAbout, speakerImg,
+    speakerInsta,speakerBlog,speakerGit,speakerGoogle,
+    speakerLinkedin,speakerWeb,speakerTwitter,speakerWiki,speakerYoutube,
+} = Astro.props;
+
+// if(speakerTwitter == ""){
+
+// }
+---
+<div class="relative lg:flex lg:items-center">
+    <img class="mx-auto mb-10 w-4/5 lg:w-56 lg:mr-32" src={speakerImg} alt="">
+    <div>
+        <p class="text-red-500 font-bold">{speakerName}</p>
+        <p class="text-sm mb-2">{speakerDesignation}</p>
+        <div class="flex gap-2 mb-5">
+            <a id="icon twitter" href={speakerTwitter}><Icon class="h-6" name="ri:twitter-line" /></a>
+            <a id="icon Insta" href={speakerInsta}><Icon class="h-6" name="ri:instagram-line"/></a>
+            <a id="icon Wiki" href={speakerWiki}><Icon class="h-6" name="icomoon-free:wikipedia"/></a>
+            <a id="icon Youtube" href={speakerYoutube}><Icon class="h-6" name="ant-design:youtube-outlined"/></a>
+            <a id="icon Git" href={speakerGit}><Icon class="h-6" name="akar-icons:github-fill"/></a>
+            <a id="icon Linkedin" href={speakerLinkedin}><Icon class="h-6" name="uil:linkedin"/></a>
+            <a id="icon Web" href={speakerWeb}><Icon class="h-6" name="mdi:web"/></a>
+            <a id="icon Blog" href={speakerBlog}><Icon class="h-6" name="ion:journal-outline"/></a>
+            <a id="icon Google" href={speakerGoogle}><Icon class="h-6" name="simple-icons:googlescholar"/></a>
+        </div>
+        <p class="mb-10">{speakerAbout}</p>
+    </div>
+    <img class="" src="./decorations/speaker-decor-red.svg" alt="">
+</div>

@@ -1,0 +1,44 @@
+---
+import SpeakerCard from "./SpeakerCard.astro";
+import { getEvents } from "../../utils/fetchData";
+
+const events = await getEvents();
+---
+<div>
+    <div class="flex flex-col bg-purple-300 px-8 py-16">
+        
+        <div class="flex flex-col mb-5">
+            <img src="./images/EventLogo_AI Summit.png" alt="">
+            <p class="text-4xl text-purple-900 font-bold mx-auto">{events.name}</p>
+        </div>
+        <div class="text-center">
+            <p class="text-lg mb-10">Join us as we host industry-experts and top researchers in the field of Artificial Intelligence, Machine Learning and Deep Learning to give you an insight into the world of Artificial Intelligence like no other.</p>
+            <a class="text-white px-12 rounded-sm bg-purple-600 py-3" href="">Register</a>
+        </div>
+    </div>
+    <div class="bg-yellow-300 bg-opacity-40 px-12 py-16">
+        <p class="text-2xl font-bold mb-5">
+            More About AI Summit
+        </p>
+        <p>
+            GDSC MPSTME is on its way to leave a mark of perfection with its upcoming global event: “The AI Summit”. It is an event featuring some of the most appreciated people in the field of Technology and Science.
+            <br>
+            <br>
+            Going live from 18th to 20th February, the goal of this AI Summit is to empower the current CS involved youth about what’s next in AI and how it is going to affect our future. With all of the major companies like Facebook (rebranding itself as Meta), Apple (adding AI into their products) and Google (building AI tech) turning there attention towards AI and Multi-reality to expand their area of working; the world would expect the working part of the population to be in coherence with theoretical, practical and industrial use-case side of AI. This is what the AI Summit hopes to achieve.
+            <br>
+            <br>
+            To bring this to wonderful thought into action, we have 3 amazing speakers coming up for the event to highlight this highly interesting topic!
+            <br>
+            <br>
+            <p class="font-bold">
+            Watch this space as we reveal more about our speakers!
+            </p>
+        </p>
+    </div>
+    <div class="flex flex-col px-12 py-16 bg-red-500 bg-opacity-20">
+        <p class="text-xl font-bold mb-16">Meet our Speakers</p>
+        <SpeakerCard />
+        <SpeakerCard />
+        <SpeakerCard />
+    </div>
+</div>
