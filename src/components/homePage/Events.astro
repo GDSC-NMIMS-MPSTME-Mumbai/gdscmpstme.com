@@ -4,31 +4,15 @@ import { getLatestEvent } from '../../utils/fetchData';
 
 const latestEvent = await getLatestEvent();
 
+// Using upcomingEvents variable to check if latest event has ended before today
+// If that's the case Event card won't be shown by editing the classes
+let upcomingEvents = true;
 const currDate = new Date();
-const upcomingEvent = true;
-// if (latestEvent.endDate<currDate) {
-// 	const upcomingEvent = true;
-// } else {
-// 	const upcomingEvent = false;
-// }
-
-// const event = {
-//   date: latestEvent.startDate
-//     .getDate()
-//     .toString().padStart(2,'0')
-//     .concat(
-//       ' - ',
-//       latestEvent.endDate.getDate().toString().padStart(2,'0'),
-//     ),
-//   month: latestEvent.startDate.toLocaleString('default', { month: 'short' })
-//     .concat(
-//       ' ',
-//       latestEvent.endDate.toLocaleString('default', { month: 'short' }),
-//     ),
-//   title: latestEvent.name,
-//   descr: latestEvent.summary,
-//   imgsrc: latestEvent.imgUrl,
-// };
+if (latestEvent.endDate >= currDate) {
+  upcomingEvents = true;
+} else {
+  upcomingEvents = false;
+}
 
 const event = {
   startDate: latestEvent.startDate.getDate().toString().padStart(2, '0'),
@@ -41,27 +25,6 @@ const event = {
   descr: latestEvent.summary,
   imgsrc: latestEvent.imgUrl,
 };
-
-// const response = await fetch("https://strapi.raindrops.tk/api/events?sort=end_date%3Adesc&pagination[limit]=1&populate=image", {
-// 	method: "GET",
-//     headers: {"Accept": "*/*"}
-// }).then(res => res.json())
-// const data = response.data[0].attributes
-
-// const currDate = new Date().toJSON().slice(0,10);
-// if (data.end_date<=currDate) {
-// 	const UpcomingEvent = true
-// } else {
-// 	const UpcomingEvent = false
-// }
-
-// const event = {
-// 	date:data.start_date.slice(8,10).concat("-",data.end_date.slice(8,10)),
-// 	month:data.end_date.slice(6,7),
-// 	title:data.name,
-// 	descr:data.summary,
-// 	imgsrc:data.image.data.attributes.formats.thumbnail.url
-// }
 ---
 
 <svg
@@ -93,13 +56,13 @@ const event = {
   }
 </style>
 
-<script define:vars={{ upcomingEvent }}>
+<script define:vars={{ upcomingEvents }}>
   let curve = document.getElementById('curve');
   let event_div = document.getElementById('event-div');
   let about_sec = document.getElementById('about-section');
   let globe_decor = document.getElementById('globe-decor');
 
-  if (upcomingEvent) {
+  if (upcomingEvents) {
     curve.classList.remove('green');
     event_div.classList.remove('hidden');
     about_sec.classList.add('pt-36');
