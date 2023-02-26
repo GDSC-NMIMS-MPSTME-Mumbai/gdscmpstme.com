@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getTeamMembers } from '../utils/fetchData';
+import OurTeam from '../components/our-team/OurTeam';
+
+const teamMembers = await getTeamMembers();
+
+const designations = ['Super Core', 'Department Lead', 'Executive'];
+const DESIGNATION_LEAD = 'Lead of GDSC MPSTME';
+const DEPARTMENT_SUPER_CORE = 'Super Core';
+
+teamMembers.sort((a, b) => {
+  if (
+    a.department === DEPARTMENT_SUPER_CORE &&
+    b.department === DEPARTMENT_SUPER_CORE
+  ) {
+    if (a.designation === DESIGNATION_LEAD) return -1;
+    if (b.designation === DESIGNATION_LEAD) return 1;
+    return a.name.localeCompare(b.name);
+  }
+
+  if (a.designation !== b.designation)
+    return (
+      designations.indexOf(a.designation) - designations.indexOf(b.designation)
+    );
+
+  return a.name.localeCompare(b.name);
+});
+---
+
+<Layout title="Our Team | GDSC MPSTME" background="bg-gdsc-yellow-light">
+  <main>
+    <OurTeam client:load teamMembers={teamMembers} />
+  </main>
+</Layout>
