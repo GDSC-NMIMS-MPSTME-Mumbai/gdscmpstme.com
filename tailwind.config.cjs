@@ -22,9 +22,9 @@ module.exports = {
             DEFAULT: '#FBBF0E',
           },
           blue: {
-            light: '#75A5F7',
-            lighter: '#E3F2FD',
-            DEFAULT: '#EB4A3D',
+            dark: '#498AF4',
+            light: '#E3F2FD',
+            DEFAULT: '#42A5F5',
           },
           red: {
             light: '#FFEBEE',
