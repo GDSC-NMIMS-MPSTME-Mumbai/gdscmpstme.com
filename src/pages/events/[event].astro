@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpeakerCard from '../../components/events/SpeakerCard.astro';
+import { Icon } from 'astro-icon';
+import { getEvents, getEvent } from '../../utils/fetchData';
+
+export async function getStaticPaths() {
+  const events = await getEvents();
+
+  return events.map(event => ({
+    params: {
+      event: event.slug,
+    },
+  }));
+}
+
+const { event: slug } = Astro.params;
+
+const event = await getEvent(slug);
+const month = event.startDate.toLocaleString('default', { month:'short'});
+const time = event.startDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+const currentDate = new Date();
+var btn_message = "Register";
+
+if(currentDate > event.endDate){
+  btn_message = "Learn More";
+}
+---
+
+<Layout title={`${event.name} | GDSC MPSTME`}>
+  <main class="flex-1 overflow-x-hidden">
+    <div class="relative flex flex-col items-center">
+      <img class="hidden lg:block absolute w-24 transform rotate-12 z-40" src="./decorations/lines-green.svg" alt="">
+      <div class="flex flex-col bg-purple-300 px-8 pb-48 lg:flex-row lg:justify-between lg:items-center lg:px-32 lg:py-16">
+          <div class="flex flex-col text-center">
+              <img class="lg:w-80" src={event.imgUrl} alt="">
+          </div>
+          <div class="flex flex-col items-center text-center lg:text-left lg:w-2/3 lg:pl-16">
+              <p class="text-4xl text-purple-900 mb-5 font-bold mx-auto lg:mx-0 lg:mr-auto">{event.name}</p>
+              <p class="text-lg mb-10">{event.summary}</p>
+              <a id="register_btn" class="flex w-1/2 justify-center text-white px-12 rounded-sm bg-purple-600 py-3 lg:mr-auto lg:w-1/3" href={event.registerationLink}>{btn_message}
+                <Icon class="h-6" name="carbon:chevron-right"/>
+              </a>
+          </div>
+      </div>
+      
+      <div class="absolute z-20 top-[190vw] flex flex-col border-2 border-green-500 rounded-xl w-2/3 p-8 bg-green-200  lg:flex-row lg:w-2/5 lg:justify-between lg:top-[28vw] lg:px-16">
+        <div class="flex flex-col justify-between text-center gap-2 mb-5 lg:mb-0">
+          <Icon name="ic:sharp-calendar-month" class="h-20" />
+          <p>
+            {event.startDate.getDate()} to {event.endDate.getDate()}
+            <br>
+            <span class="uppercase tracking-wide">{month}</span>
+          </p>
+        </div>
+        <div class="flex flex-col justify-between text-center gap-2 mb-5 lg:mb-0">
+          <Icon name="ic:baseline-access-time" class="h-20" />
+          <p>
+            {time} <br> Onwards
+          </p>
+        </div>
+        <div class="flex flex-col justify-between gap-2 text-center">
+          <Icon name="ic:baseline-location-on" class="h-20" />
+          <p>
+            {event.location}
+          </p>
+        </div>
+        
+      </div>
+      
+      <div class="clip_bottom relative z-10 bg-yellow-100 px-12 pt-[105vw] pb-32 lg:pt-52 lg:px-32">
+          <p class="text-2xl font-bold mb-5">
+              More <span class="text-blue-600">About</span> {event.name}
+          </p>
+          <p>
+              {event.description}
+              <br>
+              <br>
+              <p class="font-bold">
+              Watch this space as we reveal more about our speakers!
+              </p>
+          </p>
+      </div>
+      <div class="flex flex-col relative w-full -z-10 -mt-32 px-12 pt-44 pb-16 bg-red-500 bg-opacity-20 lg:px-32">
+          <p class="text-2xl font-bold mb-16">Meet our <span class="text-blue-600">Speakers</span></p>
+          {
+            event.speakers.map(speaker =>(
+            <SpeakerCard speakerInsta ={speaker.instagramLink}
+            speakerBlog={speaker.blogLink}
+            speakerGit = {speaker.githubLink}
+            speakerGoogle = {speaker.googleScholarLink}
+            speakerLinkedin = {speaker.linkedinLink}
+            speakerWeb = {speaker.website}
+            speakerTwitter = {speaker.twitterLink}
+            speakerWiki = {speaker.wikipediaLink}
+            speakerYoutube = {speaker.youtubeLink}
+            speakerImg={speaker.imgUrl} speakerName={speaker.name} speakerDesignation={speaker.designation} speakerAbout={speaker.bio}/>
+            ))
+          }
+          
+      </div>
+      <img class="lg:block z-50 absolute" src="./decorations/dots-red.svg" alt="">
+    </div>
+      <style>
+        .clip_top{
+            clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
+        }
+        .clip_bottom{
+            clip-path: polygon(0 0, 100% 0%, 100% 92%, 0% 100%);
+        }
+      </style>
+  </main>
+</Layout>

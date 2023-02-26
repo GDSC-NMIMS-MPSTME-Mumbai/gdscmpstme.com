@@ -1,0 +1,19 @@
+---
+const {title,descr,imgsrc,date,month,year} = Astro.props;
+// const date1 = date.slice(8,10)
+---
+
+<div class="flex flex-col border-2 border-yellow-400 bg-white p-8">
+    <div class="text-center w-48 h-auto">
+        <p class="text-sm -m-4 ml-auto w-1/2 p-1 rounded-md bg-yellow-500 lg:text-xs">
+            {month+" "+date+", "+year}
+        </p>
+        <img class="mx-auto" src={imgsrc} alt="">
+        <p class="text-lg font-bold mb-4">
+            {title}
+        </p>
+        <p class="h-64 overflow-hidden lg:text-md">
+            {descr}
+        </p>
+    </div>
+</div>
