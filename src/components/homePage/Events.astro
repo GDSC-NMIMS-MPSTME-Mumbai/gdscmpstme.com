@@ -5,29 +5,38 @@ import { getLatestEvent } from '../../utils/fetchData';
 const latestEvent = await getLatestEvent();
 
 const currDate = new Date();
-const UpcomingEvents = true;
+const upcomingEvent = true;
 // if (latestEvent.endDate<currDate) {
-// 	const UpcomingEvent = true;
+// 	const upcomingEvent = true;
 // } else {
-// 	const UpcomingEvent = false;
+// 	const upcomingEvent = false;
 // }
 
+// const event = {
+//   date: latestEvent.startDate
+//     .getDate()
+//     .toString().padStart(2,'0')
+//     .concat(
+//       ' - ',
+//       latestEvent.endDate.getDate().toString().padStart(2,'0'),
+//     ),
+//   month: latestEvent.startDate.toLocaleString('default', { month: 'short' })
+//     .concat(
+//       ' ',
+//       latestEvent.endDate.toLocaleString('default', { month: 'short' }),
+//     ),
+//   title: latestEvent.name,
+//   descr: latestEvent.summary,
+//   imgsrc: latestEvent.imgUrl,
+// };
+
 const event = {
-  startDate: latestEvent.startDate
-    .getDate()
-    .toString()
-    .concat(
-      ' ',
-      latestEvent.startDate.toLocaleString('default', { month: 'short' }),
-    ),
-  endDate: latestEvent.endDate
-    .getDate()
-    .toString()
-    .concat(
-      ' ',
-      latestEvent.endDate.toLocaleString('default', { month: 'short' }),
-    ),
-  month: latestEvent.startDate.toLocaleString('default', { month: 'short' }),
+  startDate: latestEvent.startDate.getDate().toString().padStart(2, '0'),
+  startMonth: latestEvent.startDate.toLocaleString('default', {
+    month: 'short',
+  }),
+  endDate: latestEvent.endDate.getDate().toString().padStart(2, '0'),
+  endMonth: latestEvent.endDate.toLocaleString('default', { month: 'short' }),
   title: latestEvent.name,
   descr: latestEvent.summary,
   imgsrc: latestEvent.imgUrl,
@@ -68,8 +77,9 @@ const event = {
 <div id="event-div" class="bg-white hidden">
   <UpcomingEvent
     startDate={event.startDate}
+    startMonth={event.startMonth}
     endDate={event.endDate}
-    month={event.month}
+    endMonth={event.endMonth}
     title={event.title}
     desc={event.descr}
     imgsrc={event.imgsrc}
@@ -83,13 +93,13 @@ const event = {
   }
 </style>
 
-<script define:vars={{ UpcomingEvents }}>
+<script define:vars={{ upcomingEvent }}>
   let curve = document.getElementById('curve');
   let event_div = document.getElementById('event-div');
   let about_sec = document.getElementById('about-section');
   let globe_decor = document.getElementById('globe-decor');
 
-  if (UpcomingEvents) {
+  if (upcomingEvent) {
     curve.classList.remove('green');
     event_div.classList.remove('hidden');
     about_sec.classList.add('pt-36');
