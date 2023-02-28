@@ -5,38 +5,25 @@ import OurTeam from '../components/team/OurTeam';
 
 const teamMembers = await getTeamMembers();
 
+const isLead = member => member.designation === 'Lead of GDSC MPSTME';
+const isDepartmentLead = member => member.designation === 'Department Lead';
+const isSuperCore = member => member.department === 'Super Core';
+
 teamMembers.sort((a, b) => {
   // lead comes first
-  if (a.designation === 'Lead of GDSC MPSTME') return -1;
-  if (b.designation === 'Lead of GDSC MPSTME') return 1;
+  if (isLead(a)) return -1;
+  if (isLead(b)) return 1;
 
   // followed by super core
-  if (a.department === 'Super Core') {
-    if (b.department === 'Super Core') {
-      return a.name.localeCompare(b.name);
-    } else {
-      return -1;
-    }
-  }
+  if (isSuperCore(a) && !isSuperCore(b)) return -1;
 
-  if (b.department === 'Super Core') {
-    return 1;
-  }
+  if (!isSuperCore(a) && isSuperCore(b)) return 1;
 
   // followed by department leads
-  if (a.designation === 'Department Lead') {
-    if (b.designation === 'Department Lead') {
-      return a.name.localeCompare(b.name);
-    } else {
-      return -1;
-    }
-  }
+  if (isDepartmentLead(a) && !isDepartmentLead(b)) return -1;
 
-  if (b.designation === 'Department Lead') {
-    return 1;
-  }
+  if (!isDepartmentLead(a) && isDepartmentLead(b)) return 1;
 
-  // followed by executives
   return a.name.localeCompare(b.name);
 });
 ---
