@@ -1,29 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getTeamMembers } from '../utils/fetchData';
-import OurTeam from '../components/our-team/OurTeam';
+import OurTeam from '../components/team/OurTeam';
 
 const teamMembers = await getTeamMembers();
 
-const designations = ['Super Core', 'Department Lead', 'Executive'];
-const DESIGNATION_LEAD = 'Lead of GDSC MPSTME';
-const DEPARTMENT_SUPER_CORE = 'Super Core';
-
 teamMembers.sort((a, b) => {
-  if (
-    a.department === DEPARTMENT_SUPER_CORE &&
-    b.department === DEPARTMENT_SUPER_CORE
-  ) {
-    if (a.designation === DESIGNATION_LEAD) return -1;
-    if (b.designation === DESIGNATION_LEAD) return 1;
-    return a.name.localeCompare(b.name);
+  // lead comes first
+  if (a.designation === 'Lead of GDSC MPSTME') return -1;
+  if (b.designation === 'Lead of GDSC MPSTME') return 1;
+
+  // followed by super core
+  if (a.department === 'Super Core') {
+    if (b.department === 'Super Core') {
+      return a.name.localeCompare(b.name);
+    } else {
+      return -1;
+    }
   }
 
-  if (a.designation !== b.designation)
-    return (
-      designations.indexOf(a.designation) - designations.indexOf(b.designation)
-    );
+  if (b.department === 'Super Core') {
+    return 1;
+  }
 
+  // followed by department leads
+  if (a.designation === 'Department Lead') {
+    if (b.designation === 'Department Lead') {
+      return a.name.localeCompare(b.name);
+    } else {
+      return -1;
+    }
+  }
+
+  if (b.designation === 'Department Lead') {
+    return 1;
+  }
+
+  // followed by executives
   return a.name.localeCompare(b.name);
 });
 ---
