@@ -1,0 +1,26 @@
+---
+import LeftSection from './LeftSection.astro';
+import FormSection from './FormSection.astro';
+---
+
+<main
+  class="relative flex lg:flex-row md:flex-row flex-col items-center justify-center gap-8 md:gap-20 lg:gap-36 py-24 px-8 overflow-x-hidden"
+>
+  <img
+    src="/decorations/dots-blue.svg"
+    alt=""
+    class="lg:block hidden absolute top-[50px] right-[-160px]"
+  />
+  <img
+    src="/decorations/contact-person.svg"
+    alt=""
+    class="lg:block hidden absolute top-[150px] left-[70px] w-20"
+  />
+  <img
+    src="/decorations/apple-blue.svg"
+    alt=""
+    class="lg:block hidden absolute bottom-[170px] left-[200px]"
+  />
+  <LeftSection />
+  <FormSection />
+</main>
