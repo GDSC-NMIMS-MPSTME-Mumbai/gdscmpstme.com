@@ -1,6 +1,6 @@
 const GetMembersQuery = `
   query GetMembers {
-    members(sort: "id") {
+    members(sort: "id", pagination: { limit: 100 }) {
       data {
         id
         attributes {
@@ -47,7 +47,7 @@ const GetLatestEventQuery = `
 
 const GetEventsQuery = `
   query GetEvents {
-    events(sort: "start:desc") {
+    events(sort: "start:desc", pagination: { limit: 100 }) {
       data {
         attributes {
           name
@@ -127,7 +127,7 @@ const GetEventQuery = `
                 instagram_link
                 github_link
                 linkedin_link
-                medium_link
+                blog_link
                 google_scholar_link
               }
             }
@@ -156,7 +156,7 @@ const GetEventQuery = `
 
 const GetAchievementsQuery = `
   query GetAchievements {
-    achievements(sort: "date:desc") {
+    achievements(sort: "date:desc", pagination: { limit: 100 }) {
       data {
         attributes {
           name
@@ -185,7 +185,7 @@ const GetAchievementsQuery = `
 
 const GetProjectsQuery = `
   query GetProjects {
-    projects(sort: "id:desc") {
+    projects(sort: "id:desc", pagination: { limit: 100 }) {
       data {
         attributes {
           name
