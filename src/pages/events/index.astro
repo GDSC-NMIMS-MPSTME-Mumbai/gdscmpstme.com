@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getEvents } from '../../utils/fetchData';
+
+const events = await getEvents();
+---
+
+<Layout title="Events | GDSC MPSTME">
+  <main class="flex-1">
+    <ul class="m-5">
+      {
+        events.map(event => (
+          <li>
+            👉 <a href={`/events/${event.slug}`}>{event.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
