@@ -1,37 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import AchievementsDetailsCard from '../components/achievements/AchievementsDetailsCard.astro';
-import achievements from '../assets/achievements.png';
-import ProjectsArchiveCards from '../components/achievements/ProjectsArchiveCards.astro';
+import Achievements from '../components/achievements/Achievements.astro';
 ---
 
 <style>
+  /* .hero-section-white {
+    background: white;
+    position: relative;
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
+    marginbottom: -10vw;
+  }
+
+  .hero-bg {
+    position: relative;
+    background: #c8e6c9;
+    clip-path: polygon(0 80%, 100% 60%, 100% 100%, 0 100%);
+    z-index: 10;
+  }
+  .hero-section-green {
+    background: #c8e6c9;
+  } */
   .bgimg {
     background: url('../assets/achievementsbg.svg') no-repeat bottom !important;
-  }
-  .achievementWrapper::-webkit-scrollbar:horizontal {
-    height: 11px;
-    background-color: #fff;
-    border-radius: 8px;
-  }
-
-  .achievementWrapper::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background-color: #fbbf0e;
-  }
-
-  .achievementWrapper::-webkit-scrollbar {
-    -webkit-appearance: none;
   }
 </style>
 
 <Layout title="Achievements & Projects | GDSC MPSTME">
   <main>
-    <div class="md:pb-9 md:pt-5 bgimg">
+    <div class="md:pt-5 bgimg">
       <div class="container mx-auto max-sm:px-4">
         <div class="lg:flex justify-center md:mt-10 xl:mx-36">
           <div
-            class="bg-[#e9d1fe] rounded-[25px] p-8 flex flex-col justify-between leading-normal"
+            class="bg-[#e9d1fe] z-index-10 rounded-[25px] p-8 flex flex-col justify-between leading-normal"
           >
             <div class="grid md:grid-cols-3 items-center justify-center">
               <div class="">
@@ -66,51 +67,7 @@ import ProjectsArchiveCards from '../components/achievements/ProjectsArchiveCard
         </div>
       </div>
     </div>
-    <div class="bg-[#c8e6c9]">
-      <div class="md:pb-12 md:pt-1 pt-10">
-        <div class="container md:mx-auto max-sm:px-6">
-          <div class="md:mt-5 xl:mx-36">
-            <div class="text-[#498AF4] font-bold text-xl">
-              Achievements Archive
-            </div>
-            <div class="text-gray-900 font-bold text-[34px] mb-[35px]">
-              Successful, Memorable Achievements So Far
-              <div class="flex flex-col mx-auto mt-10 p-auto">
-                <div class="flex overflow-x-scroll pb-10 achievementWrapper">
-                  <div class="flex flex-nowrap">
-                    <AchievementsDetailsCard />
-                    <AchievementsDetailsCard />
-                    <AchievementsDetailsCard />
-                    <AchievementsDetailsCard />
-                    <AchievementsDetailsCard />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mt-8 md:mt-16 xl:mx-44">
-              <div class="text-[#498AF4] font-bold text-xl">
-                Projects Archive
-              </div>
-              <div class="text-gray-900 font-bold text-[34px] mb-[35px]">
-                Take a glance at few of our favourite Projects
-              </div>
-
-              <div class="flex flex-col mx-auto mt-10 p-auto">
-                <div
-                  class="flex overflow-x-scroll pb-10 mb-10 achievementWrapper"
-                >
-                  <div class="flex flex-nowrap">
-                    <ProjectsArchiveCards />
-                    <ProjectsArchiveCards />
-                    <ProjectsArchiveCards />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Achievements />
   </main>
 
   <script>

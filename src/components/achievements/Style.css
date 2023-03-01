@@ -1,0 +1,17 @@
+.bgimg {
+  background: url('../assets/achievementsbg.svg') no-repeat bottom !important;
+}
+.achievementWrapper::-webkit-scrollbar:horizontal {
+  height: 11px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.achievementWrapper::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #fbbf0e;
+}
+
+.achievementWrapper::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
