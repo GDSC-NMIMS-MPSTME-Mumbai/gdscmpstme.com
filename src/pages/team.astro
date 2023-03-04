@@ -5,9 +5,10 @@ import OurTeam from '../components/team/OurTeam';
 
 const teamMembers = await getTeamMembers();
 
-const isLead = member => member.designation === 'Lead of GDSC MPSTME';
-const isDepartmentLead = member => member.designation === 'Department Lead';
-const isSuperCore = member => member.department === 'Super Core';
+const isLead = (member: Member) => member.designation === 'Lead of GDSC MPSTME';
+const isDepartmentLead = (member: Member) =>
+  member.designation === 'Department Lead';
+const isSuperCore = (member: Member) => member.department === 'Super Core';
 
 teamMembers.sort((a, b) => {
   // lead comes first
@@ -16,14 +17,13 @@ teamMembers.sort((a, b) => {
 
   // followed by super core
   if (isSuperCore(a) && !isSuperCore(b)) return -1;
-
   if (!isSuperCore(a) && isSuperCore(b)) return 1;
 
   // followed by department leads
   if (isDepartmentLead(a) && !isDepartmentLead(b)) return -1;
-
   if (!isDepartmentLead(a) && isDepartmentLead(b)) return 1;
 
+  // everyone at the same level is sorted by name
   return a.name.localeCompare(b.name);
 });
 ---

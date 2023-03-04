@@ -9,7 +9,7 @@ const Heading: FC<Props> = ({ activeDepartment }) => {
     All: 'Team',
     'Super Core': 'Super Core',
     'Web Dev': 'Web Developers',
-    'App Development': 'Android Developers',
+    'App Dev': 'App Developers',
     'AI/ML': 'AI Department',
     'Competitive Programming': 'Competitive Programmers',
     'Robotics & IOT': 'Robotics & IOT Department',
@@ -20,7 +20,7 @@ const Heading: FC<Props> = ({ activeDepartment }) => {
   };
 
   return (
-    <div className="text-5xl text-center font-bold my-10">
+    <div className="text-5xl leading-tight text-center font-bold my-10">
       Meet&nbsp;
       <span className="text-gdsc-blue">Our {headers[activeDepartment]}</span>
     </div>

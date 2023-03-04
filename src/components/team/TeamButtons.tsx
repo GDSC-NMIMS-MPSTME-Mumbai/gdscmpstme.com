@@ -7,9 +7,10 @@ interface Props {
 
 const TeamButtons: FC<Props> = ({ activeDepartment, setActiveDepartment }) => {
   const departments = [
+    'All',
     'Super Core',
     'Web Dev',
-    'App Development',
+    'App Dev',
     'Competitive Programming',
     'AI/ML',
     'Robotics & IOT',
@@ -17,11 +18,10 @@ const TeamButtons: FC<Props> = ({ activeDepartment, setActiveDepartment }) => {
     'Collaborations',
     'Logistics',
     'Public Relations',
-    'All',
   ];
 
   return (
-    <div className="flex scrollbar px-8 scrollbar-track-gdsc-yellow md:flex-wrap md:overflow-hidden md:justify-center mx-20 my-2 uppercase max-w-full">
+    <div className="flex md:flex-wrap md:overflow-hidden md:justify-center my-2 w-11/12 overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-gdsc-yellow scrollbar-track-rounded-md scrollbar-thumb-rounded-md">
       {departments.map(department => {
         return (
           <button
