@@ -23,7 +23,9 @@ async function getTeamMembers(): Promise<Member[]> {
     name: member.attributes.name,
     designation: member.attributes.designation,
     department: member.attributes.department,
-    imgUrl: member.attributes.image.data.attributes.url,
+    imgUrl:
+      member.attributes.image.data.attributes.formats?.medium?.url ??
+      member.attributes.image.data.attributes.url,
   }));
 }
 
@@ -120,7 +122,7 @@ async function getAchievements(): Promise<Achievement[]> {
   }));
 }
 
-async function getProjects() {
+async function getProjects(): Promise<Project[]> {
   const { projects } = await client.request(GetProjectsQuery);
 
   return projects.data.map(project => ({

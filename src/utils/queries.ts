@@ -11,6 +11,7 @@ const GetMembersQuery = `
             data {
               attributes {
                 url
+                formats
               }
             }
           }
