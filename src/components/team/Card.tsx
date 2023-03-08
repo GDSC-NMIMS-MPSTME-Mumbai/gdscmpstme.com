@@ -1,27 +1,24 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 interface Props {
   name: string;
-  src: string;
+  imgUrl: string;
   designation: string;
   department: string;
 }
 
-const Card: FC<Props> = ({ name, src, designation, department }) => {
+const Card: FC<Props> = ({ name, imgUrl, department, designation }) => {
   return (
-    <div className="h-80 w-56 mx-4 rounded-xl flex justify-center items-center flex-col uppercase text-center">
+    <div className="flex flex-col items-center w-48 uppercase font-medium">
       <img
-        src={src}
-        alt={`${name}'s avatar `}
-        className=" rounded-full w-44 h-44 mb-5 object-cover"
-      ></img>
-      <h3 className="text-xl">{name}</h3>
-      <div className="text-gdsc-green">
-        <p>
-          {designation}
-          {department != 'Super Core' ? <p>({department})</p> : <span></span>}
-        </p>
-      </div>
+        className="w-48 h-48 object-cover rounded-full mb-5"
+        src={imgUrl}
+        alt={`${name}'s avatar`}
+      />
+      <span className="text-center text-xl tracking-wide mb-1">{name}</span>
+      <span className="text-center text-gdsc-green mx-5">
+        {designation} {department !== 'Super Core' && `(${department})`}
+      </span>
     </div>
   );
 };

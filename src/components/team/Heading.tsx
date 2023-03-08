@@ -1,29 +1,32 @@
-import { FC } from 'react';
+import type { FC } from 'react';
+import { activeDepartment } from '../../stores/department';
+import { useStore } from '@nanostores/react';
 
-interface Props {
-  activeDepartment: string;
-}
+const Heading: FC = () => {
+  const $activeDepartment = useStore(activeDepartment);
 
-const Heading: FC<Props> = ({ activeDepartment }) => {
-  const headers = {
+  const headerForFilter = {
     All: 'Team',
     'Super Core': 'Super Core',
     'Web Dev': 'Web Developers',
     'App Dev': 'App Developers',
     'AI/ML': 'AI Department',
-    'Competitive Programming': 'Competitive Programmers',
-    'Robotics & IOT': 'Robotics & IOT Department',
+    'Competitive Programming': 'CP Department',
+    'Robotics & IOT': 'Hardware Freaks',
     'Public Relations': 'PR Department',
-    Logistics: 'Logistics Department',
-    Creatives: 'Creatives Department',
-    Collaborations: 'Collaborations Department',
+    Logistics: 'Logistics Guys',
+    Creatives: 'Creative Thinkers',
+    Collaborations: 'Collaborators',
   };
 
   return (
-    <div className="text-5xl leading-tight text-center font-bold my-10">
-      Meet&nbsp;
-      <span className="text-gdsc-blue">Our {headers[activeDepartment]}</span>
-    </div>
+    <h1 className="text-5xl font-bold text-center leading-tight my-10 mx-4">
+      Meet{' '}
+      <span className="text-gdsc-blue hidden md:inline">
+        Our {headerForFilter[$activeDepartment]}
+      </span>
+      <span className="text-gdsc-blue md:hidden">Our Team</span>
+    </h1>
   );
 };
 

@@ -35,6 +35,9 @@ module.exports = {
           },
         },
       },
+      screens: {
+        md: '875px',
+      },
     },
   },
   plugins: [require('tailwind-scrollbar')({ nocompatible: true })],

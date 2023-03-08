@@ -1,7 +1,10 @@
 ---
+import Heading from '../components/team/Heading';
+import Team from '../components/team/Team';
+import TeamButtons from '../components/team/TeamButtons';
 import Layout from '../layouts/Layout.astro';
+
 import { getTeamMembers } from '../utils/fetchData';
-import OurTeam from '../components/team/OurTeam';
 
 const teamMembers = await getTeamMembers();
 
@@ -29,7 +32,32 @@ teamMembers.sort((a, b) => {
 ---
 
 <Layout title="Our Team | GDSC MPSTME" background="bg-gdsc-yellow-light">
-  <main>
-    <OurTeam client:load teamMembers={teamMembers} />
+  <main class="relative overflow-x-hidden flex-1">
+    <Heading client:load />
+    <TeamButtons client:load />
+    <Team teamMembers={teamMembers} client:load />
+
+    <!-- decor -->
+    <img
+      class="decoration -right-40 top-44 w-80"
+      src="/decorations/dots-green.svg"
+      alt=""
+    />
+    <img
+      class="decoration bottom-[20%] -left-7 w-36"
+      src="/decorations/book-yellow.svg"
+      alt=""
+    />
+    <img
+      class="decoration rotate-12 bottom-[10%] right-14 w-28"
+      src="/decorations/info-globe.svg"
+      alt=""
+    />
   </main>
 </Layout>
+
+<style>
+  .decoration {
+    @apply absolute hidden md:block;
+  }
+</style>

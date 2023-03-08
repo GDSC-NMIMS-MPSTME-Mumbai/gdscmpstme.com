@@ -122,7 +122,7 @@ async function getAchievements(): Promise<Achievement[]> {
   }));
 }
 
-async function getProjects() {
+async function getProjects(): Promise<Project[]> {
   const { projects } = await client.request(GetProjectsQuery);
 
   return projects.data.map(project => ({
