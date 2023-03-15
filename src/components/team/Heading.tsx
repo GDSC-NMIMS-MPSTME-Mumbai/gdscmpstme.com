@@ -11,7 +11,7 @@ const Heading: FC = () => {
     if (initialRender.current) {
       initialRender.current = false;
     }
-  });
+  }, []);
 
   const headerForFilter = {
     All: 'Team',
