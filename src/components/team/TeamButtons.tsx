@@ -20,7 +20,7 @@ const TeamButtons: FC = () => {
   ];
 
   return (
-    <div className="flex md:flex-wrap md:justify-center gap-x-2 md:gap-4 w-11/12 md:w-full md:px-48 max-w-screen-2xl mx-auto mb-12 md:mb-16 px-4 pb-6 md:pb-0 overflow-auto scrollbar-thin scrollbar-thumb-gdsc-yellow scrollbar-track-white scrollbar-track-rounded-md scrollbar-thumb-rounded-md">
+    <div className="flex md:flex-wrap md:justify-center gap-x-2 md:gap-4 w-11/12 md:w-full md:px-48 max-w-screen-2xl mx-auto mb-12 md:mb-0 px-4 pb-6 md:pb-0 overflow-auto scrollbar-thin scrollbar-thumb-gdsc-yellow scrollbar-track-white scrollbar-track-rounded-md scrollbar-thumb-rounded-md">
       {departments.map((department, id) => {
         return (
           <button
