@@ -9,14 +9,14 @@ interface Props {
 
 const Card: FC<Props> = ({ name, imgUrl, department, designation }) => {
   return (
-    <div className="flex flex-col items-center w-48 uppercase font-medium">
+    <div className="flex w-48 flex-col items-center font-medium uppercase">
       <img
-        className="w-48 h-48 object-cover rounded-full mb-5"
+        className="mb-5 h-48 w-48 rounded-full object-cover"
         src={imgUrl}
         alt={`${name}'s avatar`}
       />
-      <span className="text-center text-xl tracking-wide mb-1">{name}</span>
-      <span className="text-center text-gdsc-green mx-5">
+      <span className="mb-1 text-center text-xl tracking-wide">{name}</span>
+      <span className="mx-5 text-center text-gdsc-green">
         {designation} {department !== 'Super Core' && `(${department})`}
       </span>
     </div>

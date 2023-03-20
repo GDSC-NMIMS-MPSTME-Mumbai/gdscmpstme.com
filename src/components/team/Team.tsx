@@ -11,7 +11,7 @@ const Team: FC<Props> = ({ teamMembers }) => {
   const $activeDepartment = useStore(activeDepartment);
 
   return (
-    <section className="flex flex-wrap justify-center gap-x-12 gap-y-10 md:px-52 max-w-screen-2xl px-5 mx-auto mb-10 relative">
+    <section className="relative mx-auto mb-10 flex max-w-screen-2xl flex-wrap justify-center gap-x-12 gap-y-10 px-5 md:px-52">
       {teamMembers
         .filter(
           member =>
@@ -22,7 +22,7 @@ const Team: FC<Props> = ({ teamMembers }) => {
           <Card {...member} key={member.id} />
         ))}
       <img
-        className="absolute hidden md:block -top-6 left-[10%] w-24"
+        className="absolute -top-6 left-[10%] hidden w-24 md:block"
         src="/decorations/contact-person.svg"
         alt=""
       />

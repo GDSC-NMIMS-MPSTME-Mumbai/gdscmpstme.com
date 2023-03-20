@@ -20,9 +20,9 @@ const Heading: FC = () => {
   };
 
   return (
-    <h1 className="text-5xl font-bold text-center leading-tight my-10 mx-4">
+    <h1 className="my-10 mx-4 text-center text-5xl font-bold leading-tight">
       Meet{' '}
-      <span className="text-gdsc-blue hidden md:inline">
+      <span className="hidden text-gdsc-blue md:inline">
         Our {headerForFilter[$activeDepartment]}
       </span>
       <span className="text-gdsc-blue md:hidden">Our Team</span>
