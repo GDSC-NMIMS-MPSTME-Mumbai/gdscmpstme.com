@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { motion } from 'framer-motion';
 
 interface Props {
   name: string;
@@ -9,7 +10,13 @@ interface Props {
 
 const Card: FC<Props> = ({ name, imgUrl, department, designation }) => {
   return (
-    <div className="flex w-48 flex-col items-center font-medium uppercase">
+    <motion.div
+      layout
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      className="flex flex-col items-center w-48 uppercase font-medium"
+    >
       <img
         className="mb-5 h-48 w-48 rounded-full object-cover"
         src={imgUrl}
@@ -19,7 +26,7 @@ const Card: FC<Props> = ({ name, imgUrl, department, designation }) => {
       <span className="mx-5 text-center text-gdsc-green">
         {designation} {department !== 'Super Core' && `(${department})`}
       </span>
-    </div>
+    </motion.div>
   );
 };
 
