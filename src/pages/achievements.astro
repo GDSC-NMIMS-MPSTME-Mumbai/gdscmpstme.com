@@ -1,76 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Banner from '../components/achievements/Banner.astro';
+
 import Achievements from '../components/achievements/Achievements.astro';
+import Projects from '../components/achievements/Projects.astro';
 ---
 
-<style>
-  /* .hero-section-white {
-    background: white;
-    position: relative;
-    z-index: -1;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
-    marginbottom: -10vw;
-  }
-
-  .hero-bg {
-    position: relative;
-    background: #c8e6c9;
-    clip-path: polygon(0 80%, 100% 60%, 100% 100%, 0 100%);
-    z-index: 10;
-  }
-  .hero-section-green {
-    background: #c8e6c9;
-  } */
-  .bgimg {
-    background: url('../assets/achievementsbg.svg') no-repeat bottom !important;
-  }
-</style>
-
 <Layout title="Achievements & Projects | GDSC MPSTME">
-  <main>
-    <div class="md:pt-5 bgimg">
-      <div class="container mx-auto max-sm:px-4">
-        <div class="lg:flex justify-center md:mt-10 xl:mx-36">
-          <div
-            class="bg-[#e9d1fe] z-index-10 rounded-[25px] p-8 flex flex-col justify-between leading-normal"
-          >
-            <div class="grid md:grid-cols-3 items-center justify-center">
-              <div class="">
-                <lottie-player
-                  autoplay
-                  loop
-                  mode="normal"
-                  loading="lazy"
-                  class="w-2/3 mx-auto lg:w-auto"
-                  src="lottie/medal.json"></lottie-player>
-              </div>
-              <div class="mb-8 md:col-span-2">
-                <div
-                  class="text-gray-900 font-bold text-5xl mb-2 max-sm:text-center"
-                >
-                  Achievements & Projects
-                </div>
-                <p
-                  class="text-gray-700 text-base max-sm:text-center max-sm:mt-6"
-                >
-                  As a club, we have always strived to bring excellence in our
-                  work. The fruit of which comes through the winnings from
-                  different competitions that members of the GDSC have taken
-                  part in. Take a look at some of our most memorable wins! Also,
-                  while you're at it check out snippets and more details about
-                  our projects, see their source-code and see what makes them
-                  unique!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <main class="mt-5">
+    <Banner />
+    <div class="slant -mt-48 bg-gdsc-green pt-64 pb-12">
+      <Achievements />
+      <Projects />
     </div>
-    <Achievements />
   </main>
-
-  <script>
-    import '@lottiefiles/lottie-player';
-  </script>
 </Layout>
+
+<script>
+  import '@lottiefiles/lottie-player';
+</script>

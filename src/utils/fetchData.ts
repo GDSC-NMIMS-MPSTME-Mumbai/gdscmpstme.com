@@ -115,12 +115,12 @@ async function getAchievements(): Promise<Achievement[]> {
     imgUrl: achievement.attributes.image.data.attributes.url,
     contributors: achievement.attributes.contributors.data.map(contributor => ({
       name: contributor.attributes.name,
-      link: contributor.attributes.link,
+      link: contributor.attributes.profile_link,
     })),
   }));
 }
 
-async function getProjects() {
+async function getProjects(): Promise<Project[]> {
   const { projects } = await client.request(GetProjectsQuery);
 
   return projects.data.map(project => ({
@@ -130,7 +130,7 @@ async function getProjects() {
     link: project.attributes.link,
     contributors: project.attributes.contributors.data.map(contributor => ({
       name: contributor.attributes.name,
-      link: contributor.attributes.link,
+      link: contributor.attributes.profile_link,
     })),
   }));
 }

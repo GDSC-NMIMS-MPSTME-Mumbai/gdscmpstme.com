@@ -1,0 +1,13 @@
+---
+export interface Props {
+  section: string;
+  heading: string;
+}
+
+const { heading, section } = Astro.props;
+---
+
+<header>
+  <span class="text-xl font-bold text-gdsc-blue-dark">{section}</span>
+  <h2 class="mt-3 text-4xl font-bold">{heading}</h2>
+</header>

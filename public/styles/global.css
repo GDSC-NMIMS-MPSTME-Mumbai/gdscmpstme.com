@@ -50,3 +50,7 @@ a {
   -ms-user-select: none;
   user-select: none;
 }
+
+.slant {
+  clip-path: polygon(0 10vw, 100% 0, 100% 100%, 0 100%);
+}
