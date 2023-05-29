@@ -23,7 +23,7 @@ const Card: FC<Props> = ({ name, imgUrl, department, designation }) => {
         alt={`${name}'s avatar`}
       />
       <span className="mb-1 text-center text-xl tracking-wide">{name}</span>
-      <span className="mx-5 text-center text-gdsc-green">
+      <span className="mx-5 text-center text-gdsc-green-dark">
         {designation} {department !== 'Super Core' && `(${department})`}
       </span>
     </motion.div>
