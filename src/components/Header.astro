@@ -11,24 +11,24 @@ import { Icon } from 'astro-icon';
   >
     <div class="grow">
       <button
-        class="p-3 rounded-full hover:bg-black hover:bg-opacity-5 grid place-items-center"
+        class="grid place-items-center rounded-full p-3 hover:bg-black hover:bg-opacity-5"
         id="menu-toggle"
       >
         <Icon name="mdi:menu" class="h-6" />
       </button>
     </div>
-    <a href="/" class="grow relative -left-5">
+    <a href="/" class="relative -left-5 grow">
       <img src="/images/gdsc-logo.png" alt="GDSC Logo" class="h-20" />
     </a>
     <nav
-      class="fixed top-0 left-0 w-64 overflow-y-auto h-full bg-white z-50 flex flex-col transition-all duration-300"
+      class="fixed top-0 left-0 z-50 flex h-full w-64 flex-col overflow-y-auto bg-white transition-all duration-300"
     >
       <img
         src="/images/gdsc-mpstme-logo.png"
         alt="GDSC MPSTME Logo"
-        class="w-4/5 my-3 self-center"
+        class="my-3 w-4/5 self-center"
       />
-      <hr class="bg-black w-full" />
+      <hr class="w-full bg-black" />
       <ul class="py-2">
         <li>
           <a href="/events" class="mobile-link">
@@ -43,7 +43,7 @@ import { Icon } from 'astro-icon';
           </a>
         </li>
         <li>
-          <a href="/our-team" class="mobile-link">
+          <a href="/team" class="mobile-link">
             <Icon name="mdi:account-multiple" class="h-6" />
             <span>Our Team</span>
           </a>
@@ -58,13 +58,13 @@ import { Icon } from 'astro-icon';
     </nav>
     <div
       id="screen-cover"
-      class="bg-black bg-opacity-40 fixed top-0 left-0 z-40 w-screen h-screen"
+      class="fixed top-0 left-0 z-40 h-screen w-screen bg-black bg-opacity-40"
     >
     </div>
   </div>
 
   <!-- header for medium screens and above -->
-  <div class="hidden md:flex items-center justify-between gap-5 px-6 py-3">
+  <div class="hidden items-center justify-between gap-5 px-6 py-3 md:flex">
     <a href="/">
       <img
         src="/images/gdsc-mpstme-logo-horizontal.png"
@@ -80,7 +80,7 @@ import { Icon } from 'astro-icon';
         <li>
           <a class="link" href="/achievements">Achievements & Projects</a>
         </li>
-        <li><a class="link" href="/our-team">Our Team</a></li>
+        <li><a class="link" href="/team">Our Team</a></li>
         <li><a class="link" href="/contact-us">Contact Us</a></li>
       </ul>
     </nav>
@@ -89,8 +89,8 @@ import { Icon } from 'astro-icon';
 
 <style>
   .link {
-    @apply grid place-items-center h-full text-center rounded-[4px] text-gray-500 font-medium p-2;
-    @apply hover:bg-opacity-5 hover:bg-blue-500 transition-colors duration-300 ease-in-out;
+    @apply grid h-full place-items-center rounded-[4px] p-2 text-center font-medium text-gray-500;
+    @apply transition-colors duration-300 ease-in-out hover:bg-blue-500 hover:bg-opacity-5;
   }
 
   .mobile-link {
