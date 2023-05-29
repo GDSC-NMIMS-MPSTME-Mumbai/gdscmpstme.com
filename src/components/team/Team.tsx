@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { activeDepartment } from '../../stores/department';
 import { useStore } from '@nanostores/react';
 import Card from './Card';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 interface Props {
   teamMembers: Member[];

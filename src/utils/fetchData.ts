@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 const { API_BASE_URL, API_KEY } = import.meta.env;
 import { GraphQLClient } from 'graphql-request';
 import {

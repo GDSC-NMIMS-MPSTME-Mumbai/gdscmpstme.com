@@ -1,4 +1,6 @@
-const GetMembersQuery = `
+import { gql } from 'graphql-request';
+
+const GetMembersQuery = gql`
   query GetMembers {
     members(sort: "id", pagination: { limit: 100 }) {
       data {
@@ -21,7 +23,7 @@ const GetMembersQuery = `
   }
 `;
 
-const GetLatestEventQuery = `
+const GetLatestEventQuery = gql`
   query GetLatestEvent {
     events(sort: "start:desc", pagination: { limit: 1 }) {
       data {
@@ -46,7 +48,7 @@ const GetLatestEventQuery = `
   }
 `;
 
-const GetEventsQuery = `
+const GetEventsQuery = gql`
   query GetEvents {
     events(sort: "start:desc", pagination: { limit: 100 }) {
       data {
@@ -79,7 +81,7 @@ const GetEventsQuery = `
   }
 `;
 
-const GetEventQuery = `
+const GetEventQuery = gql`
   query GetEvent($slug: String!) {
     events(filters: { slug: { eq: $slug } }) {
       data {
@@ -155,7 +157,7 @@ const GetEventQuery = `
   }
 `;
 
-const GetAchievementsQuery = `
+const GetAchievementsQuery = gql`
   query GetAchievements {
     achievements(sort: "date:desc", pagination: { limit: 100 }) {
       data {
@@ -184,7 +186,7 @@ const GetAchievementsQuery = `
   }
 `;
 
-const GetProjectsQuery = `
+const GetProjectsQuery = gql`
   query GetProjects {
     projects(sort: "id:desc", pagination: { limit: 100 }) {
       data {
