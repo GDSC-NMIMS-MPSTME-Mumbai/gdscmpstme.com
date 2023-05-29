@@ -4,22 +4,22 @@ import FormSection from './FormSection.astro';
 ---
 
 <main
-  class="relative flex lg:flex-row md:flex-row flex-col items-center justify-center gap-8 md:gap-20 lg:gap-36 py-24 px-8 overflow-x-hidden"
+  class="relative flex flex-col items-center justify-center gap-8 overflow-x-hidden py-24 px-8 md:flex-row md:gap-20 lg:flex-row lg:gap-36"
 >
   <img
     src="/decorations/dots-blue.svg"
     alt=""
-    class="lg:block hidden absolute top-[50px] right-[-160px]"
+    class="absolute top-[50px] right-[-160px] hidden lg:block"
   />
   <img
     src="/decorations/contact-person.svg"
     alt=""
-    class="lg:block hidden absolute top-[150px] left-[70px] w-20"
+    class="absolute top-[150px] left-[70px] hidden w-20 lg:block"
   />
   <img
     src="/decorations/apple-blue.svg"
     alt=""
-    class="lg:block hidden absolute bottom-[170px] left-[200px]"
+    class="absolute bottom-[170px] left-[200px] hidden lg:block"
   />
   <LeftSection />
   <FormSection />
