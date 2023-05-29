@@ -1,0 +1,20 @@
+---
+import { getAchievements } from '../../utils/fetchData';
+
+const achievements = await getAchievements();
+
+import SectionHeading from '../SectionHeading.astro';
+import AchievementCard from './AchievementCard.astro';
+---
+
+<section class="mx-auto w-11/12 max-w-6xl">
+  <SectionHeading
+    section="Achievements Archive"
+    heading="Successful, Memorable Achievements So Far"
+  />
+  <div
+    class="gdsc-scrollbar mt-14 flex max-w-full gap-5 overflow-auto pb-11 md:gap-10 md:px-5"
+  >
+    {achievements.map(achievement => <AchievementCard {...achievement} />)}
+  </div>
+</section>

@@ -1,11 +1,18 @@
 ---
-import WIP from '../components/WIP.astro';
 import Layout from '../layouts/Layout.astro';
+import Banner from '../components/achievements/Banner.astro';
+
+import Achievements from '../components/achievements/Achievements.astro';
+import Projects from '../components/achievements/Projects.astro';
 ---
 
 <Layout title="Achievements & Projects | GDSC MPSTME">
-  <main>
-    <WIP />
+  <main class="mt-5">
+    <Banner />
+    <div class="slant -mt-48 bg-gdsc-green pt-64 pb-12">
+      <Achievements />
+      <Projects />
+    </div>
   </main>
 </Layout>
 
