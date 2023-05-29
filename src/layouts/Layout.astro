@@ -4,10 +4,15 @@ import Header from '../components/Header.astro';
 
 export interface Props {
   title: string;
+  description?: string;
   background?: string;
 }
 
-const { title, background = 'bg-white' } = Astro.props;
+const {
+  title,
+  description = 'This is the official website for the Google Developer Student Club - NMIMS MPSTME, Mumbai',
+  background = 'bg-white',
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -19,6 +24,7 @@ const { title, background = 'bg-white' } = Astro.props;
     <link rel="stylesheet" href="/styles/global.css" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="description" content={description} />
   </head>
   <body class={`${background} min-h-screen flex flex-col`}>
     <Header />
@@ -26,3 +32,14 @@ const { title, background = 'bg-white' } = Astro.props;
     <Footer />
   </body>
 </html>
+
+<style is:global>
+  /* reusable classes containing common styles for various sections */
+  .slant {
+    clip-path: polygon(0 10vw, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .gdsc-scrollbar {
+    @apply scrollbar scrollbar-track-white scrollbar-thumb-gdsc-yellow scrollbar-track-rounded-md scrollbar-thumb-rounded-md scrollbar-h-[10px];
+  }
+</style>
