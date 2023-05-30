@@ -15,7 +15,8 @@ module.exports = {
           },
           green: {
             light: '#E8F5E9',
-            DEFAULT: '#3CAB5A',
+            DEFAULT: '#C8E6C9',
+            dark: '#3CAB5A',
           },
           yellow: {
             light: '#FFF8E1',
@@ -35,7 +36,10 @@ module.exports = {
           },
         },
       },
+      screens: {
+        md: '875px',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
 };

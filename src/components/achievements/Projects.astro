@@ -1,0 +1,20 @@
+---
+import { getProjects } from '../../utils/fetchData';
+
+const projects = await getProjects();
+
+import SectionHeading from '../SectionHeading.astro';
+import ProjectCard from './ProjectCard.astro';
+---
+
+<section class="mx-auto mt-16 w-11/12 max-w-6xl">
+  <SectionHeading
+    section="Projects Archive"
+    heading="Take a glance at few of our favourite Projects"
+  />
+  <div
+    class="gdsc-scrollbar mt-14 flex max-w-full gap-5 overflow-auto pb-11 md:gap-10 md:px-5"
+  >
+    {projects.map(project => <ProjectCard {...project} />)}
+  </div>
+</section>
