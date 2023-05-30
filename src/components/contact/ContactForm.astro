@@ -1,5 +1,5 @@
 ---
-import InputField from './InputField.astro';
+import FloatingLabelInput from './FloatingLabelInput.astro';
 ---
 
 <form
@@ -12,15 +12,15 @@ import InputField from './InputField.astro';
     class="absolute -top-6 -left-6 w-14 -rotate-[35deg]"
     alt=""
   />
-  <InputField type="text" name="name" id="name" label="Name" />
-  <InputField type="email" name="email" id="email" label="Email" />
-  <InputField
+  <FloatingLabelInput type="text" name="name" id="name" label="Name" />
+  <FloatingLabelInput type="email" name="email" id="email" label="Email" />
+  <FloatingLabelInput
     type="number"
     name="contact"
     id="contact"
     label="Contact Number"
   />
-  <InputField type="text" name="subject" id="subject" label="Subject" />
+  <FloatingLabelInput type="text" name="subject" id="subject" label="Subject" />
   <div class="relative">
     <textarea
       class="peer w-full resize-none rounded border border-gray-400 p-3 placeholder-transparent outline-blue-500 hover:border-black"
