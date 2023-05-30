@@ -1,19 +1,27 @@
 ---
+export type Props = {
+  type: astroHTML.JSX.HTMLInputTypeAttribute;
+  id: string;
+  name: string;
+  label: string;
+};
+
 const { type, id, name, label } = Astro.props;
 ---
 
-<div class="relative mb-6">
+<div class="relative">
   <input
+    class="peer w-full rounded border border-gray-400 px-3 py-4 placeholder-transparent outline-blue-500 hover:border-black"
     type={type}
     id={id}
     name={name}
-    class="w-full block p-4 rounded border border-gray-400 hover:border-black outline-blue-500 focus:ring-0 peer"
-    placeholder=" "
+    placeholder={label}
     required
   />
   <label
-    for="floating_outlined"
-    class="absolute top-2 left-2 text-md text-gray-600 duration-200 transform -translate-y-4 scale-75 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-2/4 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4"
-    >{label}</label
+    class="pointer-events-none absolute -top-2 left-3 bg-white px-1 text-xs transition-all peer-placeholder-shown:left-2 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-600 peer-focus:-top-2 peer-focus:left-3 peer-focus:text-xs peer-focus:text-blue-600"
+    for={id}
   >
+    {label}
+  </label>
 </div>

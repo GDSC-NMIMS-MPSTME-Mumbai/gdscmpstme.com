@@ -1,0 +1,43 @@
+---
+import InputField from './InputField.astro';
+---
+
+<form
+  action="https://formsubmit.co/1937754711cd4d3bfa7b5f01dc084911"
+  method="POST"
+  class="relative flex w-4/5 min-w-[250px] max-w-[500px] flex-col gap-8 rounded-xl bg-white px-7 py-12 md:p-12"
+>
+  <img
+    src="/decorations/lines-red.svg"
+    class="absolute -top-6 -left-6 w-14 -rotate-[35deg]"
+    alt=""
+  />
+  <InputField type="text" name="name" id="name" label="Name" />
+  <InputField type="email" name="email" id="email" label="Email" />
+  <InputField
+    type="number"
+    name="contact"
+    id="contact"
+    label="Contact Number"
+  />
+  <InputField type="text" name="subject" id="subject" label="Subject" />
+  <div class="relative">
+    <textarea
+      class="peer w-full resize-none rounded border border-gray-400 p-3 placeholder-transparent outline-blue-500 hover:border-black"
+      name="message"
+      id="message"
+      cols="30"
+      rows="4"
+      placeholder="Message"
+      required></textarea>
+    <label
+      class="pointer-events-none absolute -top-2 left-3 bg-white px-1 text-xs transition-all peer-placeholder-shown:left-2 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-600 peer-focus:-top-2 peer-focus:left-3 peer-focus:text-xs peer-focus:text-blue-600"
+      for="message">Message</label
+    >
+  </div>
+  <button
+    class="self-center rounded bg-gdsc-blue-dark px-6 py-2 font-medium text-white hover:bg-[#2d6dd3]"
+  >
+    Submit
+  </button>
+</form>

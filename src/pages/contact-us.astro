@@ -1,8 +1,30 @@
 ---
+import ContactForm from '../components/contact/ContactForm.astro';
+import Socials from '../components/contact/Socials.astro';
 import Layout from '../layouts/Layout.astro';
-import Contact from '../components/contact/Contact.astro';
 ---
 
-<Layout title="Contact Us | GDSC MPSTME" background="bg-gdsc-blue-light">
-  <Contact />
+<Layout title="Contact Us | GDSC MPSTME" background="bg-[#E3F2FD]">
+  <main
+    class="relative flex flex-col items-center justify-center gap-8 py-24 md:flex-row lg:gap-36 lg:overflow-x-hidden"
+  >
+    <!-- Decoration -->
+    <img
+      src="/decorations/dots-blue.svg"
+      alt=""
+      class="absolute top-[50px] -right-40 hidden lg:block"
+    />
+    <img
+      src="/decorations/contact-person.svg"
+      alt=""
+      class="absolute top-[150px] left-[70px] hidden w-20 lg:block"
+    />
+    <img
+      src="/decorations/apple-blue.svg"
+      alt=""
+      class="absolute bottom-[170px] left-[200px] hidden lg:block"
+    />
+    <Socials />
+    <ContactForm />
+  </main>
 </Layout>
