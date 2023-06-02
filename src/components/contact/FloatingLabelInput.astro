@@ -1,0 +1,27 @@
+---
+export type Props = {
+  type: astroHTML.JSX.HTMLInputTypeAttribute;
+  id: string;
+  name: string;
+  label: string;
+};
+
+const { type, id, name, label } = Astro.props;
+---
+
+<div class="relative">
+  <input
+    class="peer w-full rounded border border-gray-400 px-3 py-4 placeholder-transparent outline-blue-500 hover:border-black"
+    type={type}
+    id={id}
+    name={name}
+    placeholder={label}
+    required
+  />
+  <label
+    class="pointer-events-none absolute -top-2 left-3 bg-white px-1 text-xs transition-all peer-placeholder-shown:left-2 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-600 peer-focus:-top-2 peer-focus:left-3 peer-focus:text-xs peer-focus:text-blue-600"
+    for={id}
+  >
+    {label}
+  </label>
+</div>
