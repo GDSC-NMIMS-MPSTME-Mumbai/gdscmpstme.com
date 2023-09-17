@@ -1,65 +1,66 @@
 ---
 ---
 
-<div
-  class="relative flex flex-col place-content-around lg:grid lg:grid-cols-2 lg:pt-14"
+<section
+  class="relative flex flex-col items-center md:min-h-[calc(100vh-150px)] md:flex-row md:justify-center"
 >
-  <h3
-    class="mx-auto mt-10 mb-14 px-5 text-4xl font-semibold text-neutral-500 md:text-5xl lg:my-auto lg:ml-40 lg:text-5xl"
+  <div
+    class="my-8 px-5 text-4xl font-semibold leading-tight sm:text-5xl sm:leading-none md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight"
   >
-    Google Developer
-    <br />
-    Student Club, MPSTME.
-    <br />
-    <div id="ele"><span class="element"></span></div>
-  </h3>
+    <h3 class="text-gray-500">
+      Google Developer
+      <br />
+      Student Club, MPSTME.
+    </h3>
+    <div class="text-[#a5d6a7]" id="typed-wrapper">
+      <span class="typed"></span>
+    </div>
+  </div>
   <img
-    class="mx-auto mb-8 w-4/5 lg:w-auto"
-    src="/images/hero-image.png"
+    class="w-4/5 max-w-lg md:w-[415px] md:max-w-2xl lg:w-2/5"
+    src="/images/hero-image.svg"
     alt="Hero Image"
   />
+
+  <!-- decorations -->
   <img
-    class="absolute top-20 left-40 hidden w-14 lg:block"
+    class="absolute top-[20%] left-[10%] hidden w-14 md:block"
     src="/decorations/hero-yellow.svg"
     alt=""
   />
-  <!-- Decor -->
   <img
-    class="absolute top-16 left-[50%] hidden w-14 lg:block"
+    class="absolute top-[10%] left-[45%] hidden w-14 md:block"
     src="/decorations/hero-green.svg"
     alt=""
   />
-  <!-- Decor -->
   <img
-    class="absolute top-[78%] left-[45%] hidden w-12 lg:block"
+    class="absolute top-[70%] left-[35%] hidden w-12 md:block"
     src="/decorations/hero-red.svg"
     alt=""
   />
-  <!-- Decor -->
   <img
-    class="absolute -bottom-80 -left-40 z-20 hidden w-96 lg:block"
+    class="absolute -bottom-48 -left-32 z-20 hidden md:block md:h-80 lg:-bottom-[250px] lg:-left-[150px] lg:h-[400px]"
     src="/decorations/floating-girl.png"
     alt=""
   />
-  <!-- Decor -->
-</div>
+</section>
 
 <script>
   import Typed from 'typed.js';
 
   const color = ['#a5d6a7', '#ef9a9a', '#FFe082'];
 
-  var options = {
-    strings: ['A committee', 'A society', 'A family'],
+  const options = {
+    strings: ['A committee.', 'A society.', 'A family.'],
     typeSpeed: 40,
     backSpeed: 40,
     backDelay: 1600,
     smartBackspace: false,
     loop: true,
-    preStringTyped: (arrayPos, self) => {
-      document.getElementById('ele').style.color = color[arrayPos];
+    preStringTyped: i => {
+      document.getElementById('typed-wrapper').style.color = color[i];
     },
   };
 
-  var typed = new Typed('.element', options);
+  new Typed('.typed', options);
 </script>

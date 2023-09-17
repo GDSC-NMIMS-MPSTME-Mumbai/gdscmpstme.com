@@ -3,32 +3,32 @@
 
 <section
   id="about-section"
-  class="bg-gdsc-green-light pt-48 clip-section relative overflow-x-hidden z-10 lg:pt-0"
+  class="clip-section relative z-10 bg-gdsc-green-light pt-48 overflow-x-hidden lg:pt-0"
 >
   <img
     id="globe-decor"
-    class="absolute w-36 z-10 top-48 -right-4 hidden lg:block"
+    class="absolute top-48 -right-4 z-10 hidden w-36 lg:block"
     loading="lazy"
     src="/decorations/globe-green.svg"
     alt=""
   />
   <!-- Decor 80 -->
   <div class="pt-10 lg:mb-32">
-    <div class="lg:w-3/4 lg:mx-auto">
-      <p class="font-bold text-2xl text-gdsc-blue-dark pl-10 lg:pt-40">
+    <div class="lg:mx-auto lg:w-3/4">
+      <p class="pl-10 text-2xl font-bold text-gdsc-blue-dark lg:pt-40">
         About Us
       </p>
-      <p class="font-bold text-4xl pl-10 tracking-wide leading-snug">
+      <p class="pl-10 text-4xl font-bold leading-snug tracking-wide">
         What Do We Do?
       </p>
       <div class="m-7 lg:flex">
         <img
-          class="mx-auto w-80 my-14 lg:my-auto"
+          class="mx-auto my-14 w-80 lg:my-auto"
           loading="lazy"
           src="/images/about.gif"
           alt="img"
         />
-        <p class="mt-8 mx-2 text-neutral-500 md:mx-16">
+        <p class="mx-2 mt-8 text-neutral-500 md:mx-16">
           Google Developer Student Clubs are university based community groups
           for students interested in Google developer technologies. Students
           from all undergraduate or graduate programs with an interest in
@@ -47,7 +47,7 @@
     </div>
     <!-- Activity Cards -->
     <div
-      class="mt-28 pb-60 mx-8 md:mx-14 lg:gap-x-10 lg:flex lg:justify-center"
+      class="mx-8 mt-28 pb-60 md:mx-14 lg:flex lg:justify-center lg:gap-x-10"
     >
       <div class="card">
         <header class="text-center text-2xl font-medium">Competitions</header>
@@ -57,10 +57,10 @@
             loop
             mode="normal"
             loading="lazy"
-            class="w-2/3 mx-auto lg:w-auto"
+            class="mx-auto w-2/3 lg:w-auto"
             src="lottie/code.json"></lottie-player>
         </div>
-        <p class="text-center px-9 mt-10">
+        <p class="mt-10 px-9 text-center">
           As a club, we have always strived to bring excellence in our work. The
           fruit of which comes through the winnings from different competitions
           that members of the GDSC have taken part in. Take a look at some of
@@ -68,33 +68,33 @@
         </p>
       </div>
       <div class="card">
-        <header class="text-center text-2xl font-medium mb-5">Projects</header>
+        <header class="mb-5 text-center text-2xl font-medium">Projects</header>
         <div>
           <lottie-player
             autoplay
             loop
             mode="normal"
             loading="lazy"
-            class="w-2/3 mx-auto lg:w-auto"
+            class="mx-auto w-2/3 lg:w-auto"
             src="lottie/hackathon.json"></lottie-player>
         </div>
-        <p class="text-center px-9 mt-5">
+        <p class="mt-5 px-9 text-center">
           Check out snippets and more details about our projects, see their
           source-code and see what makes them unique!
         </p>
       </div>
       <div class="card">
-        <header class="text-center text-2xl font-medium mb-5">Workshops</header>
+        <header class="mb-5 text-center text-2xl font-medium">Workshops</header>
         <div>
           <lottie-player
             autoplay
             loop
             mode="normal"
             loading="lazy"
-            class="w-2/3 mx-auto lg:w-auto"
+            class="mx-auto w-2/3 lg:w-auto"
             src="lottie/workshops.json"></lottie-player>
         </div>
-        <p class="text-center px-9 mt-5">
+        <p class="mt-5 px-9 text-center">
           Have a look at the statistics of our premier events, which have been a
           beacon of excellence and brought together scores of different
           developers under the same roof.
@@ -106,7 +106,7 @@
 
 <style>
   .card {
-    @apply bg-white border border-gdsc-green rounded-2xl py-7 mt-5 lg:max-w-xs;
+    @apply mt-5 rounded-2xl border border-gdsc-green bg-white py-7 lg:max-w-xs;
   }
 
   .clip-section {
@@ -114,7 +114,3 @@
     margin-bottom: -20vw;
   }
 </style>
-
-<script
-  src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
-></script>
