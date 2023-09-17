@@ -12,6 +12,8 @@ module.exports = {
         gdsc: {
           grey: {
             light: '#F4F4F4',
+            DEFAULT: '#EEF7FE',
+            dark: '#364656',
           },
           green: {
             light: '#E8F5E9',
@@ -23,9 +25,9 @@ module.exports = {
             DEFAULT: '#FBBF0E',
           },
           blue: {
-            dark: '#498AF4',
             light: '#E3F2FD',
             DEFAULT: '#42A5F5',
+            dark: '#498AF4',
           },
           red: {
             light: '#FFEBEE',
