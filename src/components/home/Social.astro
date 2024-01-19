@@ -34,17 +34,17 @@ const gdsc_comm = {
 ---
 
 <section
-  class="bg-white relative flex flex-col px-8 py-16 pt-36 lg:pt-72 overflow-hidden lg:flex-row"
+  class="relative -mt-80 flex flex-col overflow-hidden bg-white px-8 py-16 pt-96 lg:flex-row lg:pt-72"
 >
   <div
-    class="mt-28 ml-8 md:pl-24 md:mt-48 lg:pl-0 lg:min-w-[35%] lg:mt-40 lg:ml-28"
+    class="mt-28 ml-8 md:mt-48 md:pl-24 lg:mt-40 lg:ml-28 lg:min-w-[35%] lg:pl-0"
   >
     <p
-      class="font-bold text-5xl text-neutral-500 mb-8 leading-tight md:pr-20 md:mb-3"
+      class="mb-8 text-5xl font-bold leading-tight text-neutral-500 md:mb-3 md:pr-20"
     >
       Make sure to be updated with everything we do.
     </p>
-    <p class="font-bold text-xl text-neutral-400 p-2">
+    <p class="p-2 text-xl font-bold text-neutral-400">
       Follow us on our socials so you don't miss any future events /
       collaboration / news and while you're at it, make sure to like our posts
       to show us some love!
@@ -52,8 +52,8 @@ const gdsc_comm = {
   </div>
 
   <!-- Social Media Cards -->
-  <div class="flex flex-col mt-14 lg:mt-28">
-    <div class="flex min-w-max gap-x-7 ml-36 lg:ml-40">
+  <div class="mt-14 flex flex-col lg:mt-28">
+    <div class="ml-36 flex min-w-max gap-x-7 lg:ml-40">
       <SocialCards
         logo={twitter.logo}
         platform={twitter.platform}
@@ -74,7 +74,7 @@ const gdsc_comm = {
       />
     </div>
 
-    <div class="flex min-w-max gap-x-7 ml-20 lg:ml-28">
+    <div class="ml-20 flex min-w-max gap-x-7 lg:ml-28">
       <SocialCards
         logo={instagram.logo}
         platform={instagram.platform}
@@ -95,7 +95,7 @@ const gdsc_comm = {
       />
     </div>
 
-    <div class="flex min-w-max gap-x-7 ml-24 lg:ml-14">
+    <div class="ml-24 flex min-w-max gap-x-7 lg:ml-14">
       <SocialCards
         logo={linkedin.logo}
         platform={linkedin.platform}
@@ -116,7 +116,7 @@ const gdsc_comm = {
       />
     </div>
 
-    <div class="flex min-w-max gap-x-7 ml-11 lg:ml-0">
+    <div class="ml-11 flex min-w-max gap-x-7 lg:ml-0">
       <SocialCards
         logo={github.logo}
         platform={github.platform}
