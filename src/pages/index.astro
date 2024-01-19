@@ -1,11 +1,17 @@
 ---
-import WIP from '../components/WIP.astro';
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/home/Hero.astro';
+import Events from '../components/home/Events.astro';
+import AboutUs from '../components/home/AboutUs.astro';
+import Social from '../components/home/Social.astro';
 ---
 
-<Layout title="Home | GDSC MPSTME">
+<Layout title="Home | GDSC MPSTME" background="bg-gdsc-grey-light">
   <main>
-    <WIP />
+    <Hero />
+    <!-- <Events /> -->
+    <AboutUs />
+    <Social />
   </main>
 </Layout>
 

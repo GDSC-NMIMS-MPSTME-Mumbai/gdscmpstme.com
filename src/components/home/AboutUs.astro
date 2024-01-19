@@ -1,0 +1,65 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import ActivityCard from './ActivityCard.astro';
+---
+
+<section
+  id="about-section"
+  class="slant-bottom relative z-20 bg-gdsc-green-light px-10 pt-48 pb-60 overflow-x-hidden lg:pb-72"
+>
+  <img
+    id="globe-decor"
+    class="absolute top-40 -right-4 z-10 hidden w-36 md:block"
+    loading="lazy"
+    src="/decorations/globe-green.svg"
+    alt=""
+  />
+
+  <div class="mx-auto max-w-5xl">
+    <SectionHeading section="About Us" heading="What Do We Do?" />
+    <div
+      class="mt-14 flex flex-col gap-14 sm:px-10 lg:flex-row lg:items-center"
+    >
+      <img src="/images/about.gif" alt="" class="w-80 self-center" />
+      <div class="space-y-5">
+        <p class="font-medium text-neutral-500">
+          Google Developer Student Clubs are university based community groups
+          for students interested in Google developer technologies. Students
+          from all undergraduate or graduate programs with an interest in
+          growing as a developer are welcome.
+        </p>
+        <p class="font-medium text-neutral-500">
+          By joining a GDSC, students grow their knowledge in a peer-to-peer
+          learning environment and build solutions for local businesses and
+          their community.
+        </p>
+        <p class="font-medium text-neutral-500">
+          GDSC MPSTME was established in 2021, with its humble beginnings from
+          10 departments across 6 technical disciplines and flagship events like
+          CodeWars 2021-22 and AI Summit 2021-22 as its legacy.
+        </p>
+      </div>
+    </div>
+
+    <!-- Activity Cards -->
+    <div
+      class="mt-20 flex flex-col gap-5 sm:px-10 lg:flex-row lg:justify-between lg:px-0"
+    >
+      <ActivityCard
+        activity="Competitions"
+        description="As a club, we have always strived to bring excellence in our work. The fruit of which comes through the winnings from different competitions that members of the GDSC have taken part in. Take a look at some of our most memorable wins!"
+        lottieSrc="lottie/code.json"
+      />
+      <ActivityCard
+        activity="Projects"
+        description="Check out snippets and more details about our projects, see their source-code and see what makes them unique!"
+        lottieSrc="lottie/hackathon.json"
+      />
+      <ActivityCard
+        activity="Workshops"
+        description="Have a look at the statistics of our premier events, which have been a beacon of excellence and brought together scores of different developers under the same roof."
+        lottieSrc="lottie/workshops.json"
+      />
+    </div>
+  </div>
+</section>

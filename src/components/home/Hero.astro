@@ -1,0 +1,74 @@
+---
+---
+
+<section
+  class="relative z-30 flex flex-col items-center md:min-h-[calc(100vh-120px)] md:flex-row md:justify-center"
+>
+  <div
+    class="my-8 px-5 text-4xl font-semibold leading-tight sm:text-5xl sm:leading-none md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight"
+  >
+    <h3 class="text-gray-500">
+      Google Developer
+      <br />
+      Student Club, MPSTME.
+    </h3>
+    <div class="text-[#a5d6a7]" id="typed-wrapper">
+      <span class="typed"></span>
+    </div>
+  </div>
+  <img
+    class="w-4/5 max-w-lg md:w-[415px] md:max-w-2xl lg:w-2/5"
+    src="/images/hero-image.svg"
+    alt="Hero Image"
+  />
+
+  <!-- decorations -->
+  <img
+    class="absolute top-[20%] left-[10%] hidden w-14 md:block"
+    src="/decorations/hero-yellow.svg"
+    alt=""
+  />
+  <img
+    class="absolute top-[10%] left-[45%] hidden w-14 md:block"
+    src="/decorations/hero-green.svg"
+    alt=""
+  />
+  <img
+    class="absolute top-[70%] left-[35%] hidden w-12 md:block"
+    src="/decorations/hero-red.svg"
+    alt=""
+  />
+  <img
+    class="absolute -bottom-48 -left-32 z-20 hidden md:block md:h-80 lg:-bottom-[250px] lg:-left-[150px] lg:h-[400px]"
+    src="/decorations/floating-girl.png"
+    alt=""
+  />
+</section>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  preserveAspectRatio="none"
+  viewBox="0 0 1680 40"
+>
+  <path d="M0 40h1680V30S1340 0 840 0 0 30 0 30z" fill="#E8F5E9"></path>
+</svg>
+
+<script>
+  import Typed from 'typed.js';
+
+  const color = ['#a5d6a7', '#ef9a9a', '#FFe082'];
+
+  const options = {
+    strings: ['A committee.', 'A society.', 'A family.'],
+    typeSpeed: 40,
+    backSpeed: 40,
+    backDelay: 1600,
+    smartBackspace: false,
+    loop: true,
+    preStringTyped: i => {
+      document.getElementById('typed-wrapper').style.color = color[i];
+    },
+  };
+
+  new Typed('.typed', options);
+</script>

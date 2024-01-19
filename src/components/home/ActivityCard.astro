@@ -1,0 +1,28 @@
+---
+export interface Props {
+  activity: string;
+  lottieSrc: string;
+  description: string;
+}
+
+const { activity, lottieSrc, description } = Astro.props;
+---
+
+<article
+  class="flex flex-1 flex-col items-center gap-3 rounded-2xl border-2 border-gdsc-green-dark bg-white p-8"
+>
+  <header class="text-3xl font-medium">{activity}</header>
+  <div class="max-w-sm">
+    <lottie-player
+      autoplay
+      loop
+      mode="normal"
+      loading="lazy"
+      class=""
+      style="width: 100%; height: 100%;"
+      src={lottieSrc}></lottie-player>
+  </div>
+  <p class="text-center font-medium text-neutral-600">
+    {description}
+  </p>
+</article>
