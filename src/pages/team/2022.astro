@@ -1,16 +1,16 @@
 ---
-import Heading from '../components/team/Heading';
-import Team from '../components/team/Team';
-import TeamButtons from '../components/team/TeamButtons';
-import Layout from '../layouts/Layout.astro';
+import Heading from '../../components/team/2022/Heading';
+import Team from '../../components/team/Team';
+import TeamButtons from '../../components/team/2022/TeamButtons';
+import Layout from '../../layouts/Layout.astro';
 
-import { getTeamMembers } from '../utils/fetchData';
+import { get2022TeamMembers } from '../../utils/fetchData';
 
-const teamMembers = await getTeamMembers();
+const teamMembers = await get2022TeamMembers();
 
 const isLead = (member: Member) => member.designation === 'Lead of GDSC MPSTME';
-const isHead = (member: Member) => member.designation === 'Head';
-const isSubHead = (member: Member) => member.designation === 'Sub Head';
+const isDepartmentLead = (member: Member) =>
+  member.designation === 'Department Lead';
 const isSuperCore = (member: Member) => member.department === 'Super Core';
 
 teamMembers.sort((a, b) => {
@@ -22,20 +22,16 @@ teamMembers.sort((a, b) => {
   if (isSuperCore(a) && !isSuperCore(b)) return -1;
   if (!isSuperCore(a) && isSuperCore(b)) return 1;
 
-  // followed by department head
-  if (isHead(a) && !isHead(b)) return -1;
-  if (!isHead(a) && isHead(b)) return 1;
-
-  // followed by department sub head
-  if (isSubHead(a) && !isSubHead(b)) return -1;
-  if (!isSubHead(a) && isSubHead(b)) return 1;
+  // followed by department leads
+  if (isDepartmentLead(a) && !isDepartmentLead(b)) return -1;
+  if (!isDepartmentLead(a) && isDepartmentLead(b)) return 1;
 
   // everyone at the same level is sorted by name
   return a.name.localeCompare(b.name);
 });
 ---
 
-<Layout title="Our Team | GDSC MPSTME" background="bg-gdsc-yellow-light">
+<Layout title="Team 2022-2023 | GDSC MPSTME" background="bg-gdsc-yellow-light">
   <main class="relative flex-1 overflow-x-hidden">
     <Heading client:load />
     <TeamButtons client:load />

@@ -3,7 +3,8 @@
 const { API_BASE_URL, API_KEY } = import.meta.env;
 import { GraphQLClient } from 'graphql-request';
 import {
-  GetMembersQuery,
+  Get2023MembersQuery,
+  Get2022MembersQuery,
   GetLatestEventQuery,
   GetEventsQuery,
   GetEventQuery,
@@ -17,8 +18,22 @@ const client = new GraphQLClient(`${API_BASE_URL}/graphql`, {
   },
 });
 
-async function getTeamMembers(): Promise<Member[]> {
-  const { members } = await client.request(GetMembersQuery);
+async function get2023TeamMembers(): Promise<Member[]> {
+  const { members } = await client.request(Get2023MembersQuery);
+
+  return members.data.map(member => ({
+    id: member.id,
+    name: member.attributes.name,
+    designation: member.attributes.designation,
+    department: member.attributes.department,
+    imgUrl:
+      member.attributes.image.data.attributes.formats?.medium?.url ??
+      member.attributes.image.data.attributes.url,
+  }));
+}
+
+async function get2022TeamMembers(): Promise<Member[]> {
+  const { members } = await client.request(Get2022MembersQuery);
 
   return members.data.map(member => ({
     id: member.id,
@@ -140,7 +155,8 @@ async function getProjects(): Promise<Project[]> {
 }
 
 export {
-  getTeamMembers,
+  get2023TeamMembers as getTeamMembers,
+  get2022TeamMembers,
   getLatestEvent,
   getEvents,
   getEvent,

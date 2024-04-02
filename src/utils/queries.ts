@@ -1,8 +1,39 @@
 import { gql } from 'graphql-request';
 
-const GetMembersQuery = gql`
-  query GetMembers {
-    members(sort: "id", pagination: { limit: 100 }) {
+const Get2023MembersQuery = gql`
+  query Get2023Members {
+    members(
+      sort: "id"
+      pagination: { limit: 100 }
+      filters: { year: { eq: 2023 } }
+    ) {
+      data {
+        id
+        attributes {
+          name
+          designation
+          department
+          image {
+            data {
+              attributes {
+                url
+                formats
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const Get2022MembersQuery = gql`
+  query Get2022Members {
+    members(
+      sort: "id"
+      pagination: { limit: 100 }
+      filters: { year: { eq: 2022 } }
+    ) {
       data {
         id
         attributes {
@@ -216,7 +247,8 @@ const GetProjectsQuery = gql`
 `;
 
 export {
-  GetMembersQuery,
+  Get2023MembersQuery,
+  Get2022MembersQuery,
   GetLatestEventQuery,
   GetEventsQuery,
   GetEventQuery,

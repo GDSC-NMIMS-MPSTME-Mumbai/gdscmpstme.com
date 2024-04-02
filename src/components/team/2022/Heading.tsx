@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef } from 'react';
-import { activeDepartment } from '../../stores/department';
+import { activeDepartment } from '../../../stores/department';
 import { useStore } from '@nanostores/react';
 import { motion } from 'framer-motion';
 
@@ -20,13 +20,11 @@ const Heading: FC = () => {
     'App Dev': 'App Developers',
     'AI/ML': 'AI Department',
     'Competitive Programming': 'CP Department',
-    'UI/UX': 'Design Wizards',
-    Photography: 'Photographers',
-    'Business Development': 'Biz Devs',
-    'Digital Creatives': 'Creative Thinkers',
-    'Event Ops': 'Event Maestros',
-    'In-House Creatives': 'In-House Artists',
-    'Marketing and Communication': 'Marketing Gurus',
+    'Robotics & IOT': 'Hardware Freaks',
+    'Public Relations': 'PR Department',
+    Logistics: 'Logistics Guys',
+    Creatives: 'Creative Thinkers',
+    Collaborations: 'Collaboration Specialists',
   };
 
   return (
