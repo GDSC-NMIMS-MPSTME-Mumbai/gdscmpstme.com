@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from 'astro-icon';
+---
+
+<Layout title="Page not found" background="bg-[#F4F4F4]">
+  <main
+    class="relative flex h-[90vh] max-h-screen flex-col justify-around py-16 px-12 overflow-x-hidden md:py-48"
+  >
+    <div class="mx-auto flex flex-col justify-around md:gap-16">
+      <div>
+        <h1 class="my-4 text-6xl font-medium">404 not found!</h1>
+        <h2 class="text-xl font-normal">Looks like you are lost.</h2>
+      </div>
+      <div class="">
+        <p class="mt-12 flex gap-2 text-2xl font-normal">
+          Maybe you can find what you need here👇🏼
+        </p>
+        <div
+          class="mt-6 flex w-full flex-col gap-8 text-2xl font-bold md:flex-row"
+        >
+          <a class="link-style text-[#3CAB5A]" href="/">
+            <p>Home</p>
+
+            <Icon name="majesticons:arrow-right" size="25" />
+          </a>
+          <a class="link-style text-[#7900DF]" href="/events">
+            <p>Events</p>
+
+            <Icon name="majesticons:arrow-right" size="25" />
+          </a>
+          <a class="link-style text-[#FD2B25]" href="/achievements">
+            <p>Achievements</p>
+
+            <Icon name="majesticons:arrow-right" size="25" />
+          </a>
+
+          <a class="link-style text-[#FBBF0E]" href="/team">
+            <p>Team</p>
+
+            <Icon name="majesticons:arrow-right" size="25" />
+          </a>
+          <a class="link-style text-[#327EBA]" href="/contact">
+            <p>Contact&nbsp;Us</p>
+
+            <Icon name="majesticons:arrow-right" size="25" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <img
+      class="decoration bottom-20 -left-32 w-80"
+      src="/decorations/dots-red.svg"
+      alt=""
+    />
+    <img
+      class="decoration top-28 right-28 w-28 rotate-12"
+      src="/decorations/set-square-red.svg"
+      alt=""
+    />
+  </main>
+</Layout>
+<style>
+  .decoration {
+    @apply absolute hidden md:block;
+  }
+  .link-style {
+    @apply flex w-full items-center underline;
+  }
+</style>
