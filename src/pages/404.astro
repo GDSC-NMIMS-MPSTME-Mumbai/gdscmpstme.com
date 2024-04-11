@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from 'astro-icon';
+---
+
+<Layout title="Page not found" background="bg-gdsc-grey-light">
+  <main
+    class="relative grid place-items-center py-24 px-8 overflow-x-hidden sm:px-12 md:py-48 lg:py-64"
+  >
+    <div>
+      <h1 class="mb-4 text-5xl font-medium md:text-6xl">404 not found!</h1>
+      <p class="text-xl">Looks like you are lost.</p>
+      <p class="mt-12 text-2xl md:mt-16">
+        Maybe you can find what you need here 👇🏽
+      </p>
+      <div
+        class="mt-6 flex flex-col gap-4 text-2xl font-bold md:flex-row md:gap-10"
+      >
+        <a
+          class="group flex items-center gap-0.5 text-gdsc-green-dark"
+          href="/"
+        >
+          <span>Home</span>
+          <Icon
+            name="octicon:arrow-right-16"
+            size="25"
+            class="transition group-hover:translate-x-1"
+          />
+        </a>
+        <!-- COMING SOON -->
+        <!-- <a
+            class="group flex items-center gap-0.5 text-[#7900DF]"
+            href="/events"
+          >
+            <span>Events</span>
+            <Icon
+              name="octicon:arrow-right-16"
+              size="25"
+              class="transition group-hover:translate-x-1"
+            />
+          </a> -->
+        <a
+          class="group flex items-center gap-0.5 text-gdsc-red"
+          href="/achievements"
+        >
+          <span class="hidden lg:block">Achievements & Projects</span>
+          <span class="block lg:hidden">Achievements</span>
+          <Icon
+            name="octicon:arrow-right-16"
+            size="25"
+            class="transition group-hover:translate-x-1"
+          />
+        </a>
+        <a
+          class="group flex items-center gap-0.5 text-gdsc-yellow"
+          href="/team"
+        >
+          <span>Our Team</span>
+          <Icon
+            name="octicon:arrow-right-16"
+            size="25"
+            class="transition group-hover:translate-x-1"
+          />
+        </a>
+        <a
+          class="group flex items-center gap-0.5 text-gdsc-blue-dark"
+          href="/contact-us"
+        >
+          <span>Contact&nbsp;Us</span>
+          <Icon
+            name="octicon:arrow-right-16"
+            size="25"
+            class="transition group-hover:translate-x-1"
+          />
+        </a>
+      </div>
+    </div>
+
+    <img
+      class="pointer-events-none absolute -left-28 bottom-6 hidden w-60 select-none lg:block"
+      src="/decorations/dots-red.svg"
+      alt=""
+    />
+    <img
+      class="pointer-events-none absolute top-44 right-64 hidden w-28 rotate-12 select-none lg:block"
+      src="/decorations/set-square-red.svg"
+      alt=""
+    />
+  </main>
+</Layout>
