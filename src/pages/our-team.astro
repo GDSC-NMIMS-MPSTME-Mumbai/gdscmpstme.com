@@ -1,0 +1,66 @@
+---
+import Heading from '../components/team/Heading';
+import Team from '../components/team/Team';
+import TeamButtons from '../components/team/TeamButtons';
+import Layout from '../layouts/Layout.astro';
+
+import { getTeamMembers } from '../utils/fetchData';
+const teamMembers = await getTeamMembers();
+
+const isLead = (member: Member) => member.designation === 'Lead of GDSC MPSTME';
+const isHead = (member: Member) => member.designation === 'Head';
+const isSubHead = (member: Member) => member.designation === 'Sub Head';
+const isSuperCore = (member: Member) => member.department === 'Super Core';
+
+teamMembers.sort((a, b) => {
+  // lead comes first
+  if (isLead(a)) return -1;
+  if (isLead(b)) return 1;
+
+  // followed by super core
+  if (isSuperCore(a) && !isSuperCore(b)) return -1;
+  if (!isSuperCore(a) && isSuperCore(b)) return 1;
+
+  // followed by department head
+  if (isHead(a) && !isHead(b)) return -1;
+  if (!isHead(a) && isHead(b)) return 1;
+
+  // followed by department sub head
+  if (isSubHead(a) && !isSubHead(b)) return -1;
+  if (!isSubHead(a) && isSubHead(b)) return 1;
+
+  // everyone at the same level is sorted by name
+  return a.name.localeCompare(b.name);
+});
+---
+
+<Layout title="Our Team | GDSC MPSTME" background="bg-gdsc-yellow-light">
+  <main class="relative flex-1 overflow-x-hidden">
+    <Heading client:load />
+    <TeamButtons client:load />
+    <Team teamMembers={teamMembers} client:load />
+
+    <!-- decor -->
+    <img
+      class="decoration -right-40 top-44 w-80"
+      src="/decorations/dots-green.svg"
+      alt=""
+    />
+    <img
+      class="decoration bottom-[20%] -left-7 w-36"
+      src="/decorations/book-yellow.svg"
+      alt=""
+    />
+    <img
+      class="decoration bottom-[10%] right-14 w-28 rotate-12"
+      src="/decorations/info-globe.svg"
+      alt=""
+    />
+  </main>
+</Layout>
+
+<style>
+  .decoration {
+    @apply absolute hidden md:block;
+  }
+</style>

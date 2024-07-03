@@ -1,12 +1,12 @@
 ---
-import Heading from '../components/team/Heading';
-import Team from '../components/team/Team';
-import TeamButtons from '../components/team/TeamButtons';
-import Layout from '../layouts/Layout.astro';
+import Heading from '../../components/team/2023/Heading';
+import Team from '../../components/team/Team';
+import TeamButtons from '../../components/team/2023/TeamButtons';
+import Layout from '../../layouts/Layout.astro';
 
-import { getTeamMembers } from '../utils/fetchData';
+import { get2023TeamMembers } from '../../utils/fetchData';
 
-const teamMembers = await getTeamMembers();
+const teamMembers = await get2023TeamMembers();
 
 const isLead = (member: Member) => member.designation === 'Lead of GDSC MPSTME';
 const isHead = (member: Member) => member.designation === 'Head';

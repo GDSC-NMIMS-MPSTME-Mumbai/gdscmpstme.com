@@ -10,6 +10,7 @@ import {
   GetEventQuery,
   GetAchievementsQuery,
   GetProjectsQuery,
+  Get2024MembersQuery,
 } from './queries';
 
 const client = new GraphQLClient(`${API_BASE_URL}/graphql`, {
@@ -17,6 +18,20 @@ const client = new GraphQLClient(`${API_BASE_URL}/graphql`, {
     Authorization: `bearer ${API_KEY}`,
   },
 });
+
+async function get2024TeamMembers(): Promise<Member[]> {
+  const { members } = await client.request(Get2024MembersQuery);
+
+  return members.data.map(member => ({
+    id: member.id,
+    name: member.attributes.name,
+    designation: member.attributes.designation,
+    department: member.attributes.department,
+    imgUrl:
+      member.attributes.image.data.attributes.formats?.medium?.url ??
+      member.attributes.image.data.attributes.url,
+  }));
+}
 
 async function get2023TeamMembers(): Promise<Member[]> {
   const { members } = await client.request(Get2023MembersQuery);
@@ -155,11 +170,12 @@ async function getProjects(): Promise<Project[]> {
 }
 
 export {
-  get2023TeamMembers as getTeamMembers,
+  get2023TeamMembers,
   get2022TeamMembers,
   getLatestEvent,
   getEvents,
   getEvent,
   getAchievements,
   getProjects,
+  get2024TeamMembers as getTeamMembers,
 };
