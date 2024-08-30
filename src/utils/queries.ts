@@ -1,5 +1,31 @@
 import { gql } from 'graphql-request';
 
+const Get2024MembersQuery = gql`
+  query Get2024CoreMembers {
+    members(
+      sort: "id"
+      pagination: { limit: 100 }
+      filters: { year: { eq: 2024 } }
+    ) {
+      data {
+        id
+        attributes {
+          name
+          designation
+          department
+          image {
+            data {
+              attributes {
+                url
+                formats
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 const Get2023MembersQuery = gql`
   query Get2023Members {
     members(
@@ -254,4 +280,5 @@ export {
   GetEventQuery,
   GetAchievementsQuery,
   GetProjectsQuery,
+  Get2024MembersQuery,
 };

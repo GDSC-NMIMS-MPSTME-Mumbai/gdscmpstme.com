@@ -1,11 +1,12 @@
 ---
-import Heading from '../components/team/Heading';
-import TeamSection from '../components/team/Team';
-import TeamButtons from '../components/team/TeamButtons';
-import Layout from '../layouts/Layout.astro';
+import Heading from '../../components/team/2023/Heading';
+import Team from '../../components/team/Team';
+import TeamButtons from '../../components/team/2023/TeamButtons';
+import Layout from '../../layouts/Layout.astro';
 
-import { getTeamMembers } from '../utils/fetchData';
-const teamMembers = await getTeamMembers();
+import { get2023TeamMembers } from '../../utils/fetchData';
+
+const teamMembers = await get2023TeamMembers();
 
 const isLead = (member: Member) => member.designation === 'Lead of GDSC MPSTME';
 const isHead = (member: Member) => member.designation === 'Head';
@@ -38,7 +39,7 @@ teamMembers.sort((a, b) => {
   <main class="relative flex-1 overflow-x-hidden">
     <Heading client:load />
     <TeamButtons client:load />
-    <TeamSection teamMembers={teamMembers} client:load />
+    <Team teamMembers={teamMembers} client:load />
 
     <!-- decor -->
     <img

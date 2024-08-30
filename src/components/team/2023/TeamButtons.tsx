@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { activeDepartment } from '../../stores/department';
+import { activeDepartment } from '../../../stores/department';
 import { useStore } from '@nanostores/react';
 
 const TeamButtons: FC = () => {
@@ -7,19 +7,18 @@ const TeamButtons: FC = () => {
 
   const departments = [
     'All',
+    'Super Core',
     'Web Dev',
-    'AI/ML',
     'App Dev',
-    'Game Dev',
+    'Competitive Programming',
+    'AI/ML',
     'UI/UX',
-    'Robotics & IOT',
-    'Public Relations',
-    'SMCW',
-    'Digital Creatives',
-    'Inhouse Creatives',
     'Photography',
     'Business Development',
-    'Event Operations',
+    'Digital Creatives',
+    'Event Ops',
+    'In-House Creatives',
+    'Marketing and Communication',
   ];
 
   return (

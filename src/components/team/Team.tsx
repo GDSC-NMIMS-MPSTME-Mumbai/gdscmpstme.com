@@ -8,7 +8,7 @@ interface Props {
   teamMembers: Member[];
 }
 
-const Team: FC<Props> = ({ teamMembers }) => {
+const TeamSection: FC<Props> = ({ teamMembers }) => {
   const $activeDepartment = useStore(activeDepartment);
 
   return (
@@ -33,4 +33,4 @@ const Team: FC<Props> = ({ teamMembers }) => {
   );
 };
 
-export default Team;
+export default TeamSection;
